@@ -17,7 +17,9 @@ node tools/preview.mjs
 ## 页面
 
 - `index.html`：首页（关于、领域、产品、联系）。
-- `little-elsewhere/index.html`：别境产品介绍。
+- `little-elsewhere/index.html`：别境产品介绍，以「出发 → 准备 → 专注 → 收获」串联五张界面设计预览。
+- `little-elsewhere/product.css`：产品页独立配色与响应式图文布局，不影响官网其他页面。
+- `little-elsewhere/product.js`：点击截图打开原生图片预览弹窗，支持关闭按钮、Esc、点击遮罩关闭和焦点返回；关闭 JavaScript 时图片链接仍可访问。
 - `privacy/index.html`：公司官网隐私政策，不是 App 隐私政策。
 - `terms/index.html`：公司网站使用条款。
 - `404.html`：不存在的地址，按自定义域名根目录运行。
@@ -29,7 +31,7 @@ node tools/preview.mjs
 ## 发布前需要补充
 
 1. **联系邮箱**：已按站点所有者提供的信息设置为 `hello@jevaiworks.com`，同时写入 `site.config.js` 和首页 `data-contact` 中的 mailto 链接，关闭 JavaScript 时也可使用。以后更换邮箱时同步修改两处；发布前测试邮箱收发。
-2. **产品素材**：目前使用公司「文件」目录内的 `app icon.png` 和 `app.png`；后者标明为场景原画，没有将其冒充 App 截图。之后可在产品页加入正式 UI 截图。没有假定 iOS / Android 均已确定发布，也没有虚构 App Store 下载按钮。
+2. **产品素材**：首页使用公司「文件」目录内的 `app icon.png` 和 `app.png`。产品页另加入「little elsewhere images」中的五张截图，原样复制到 `assets/little-elsewhere/`，标明为开发中的界面设计预览。后续可以用相同文件名替换为正式截图。没有假定 iOS / Android 均已确定发布，也没有虚构 App Store 下载按钮。
 3. **产品状态**：当前为「开发中」。正式上线后更新状态、平台及真实下载链接，并根据 App 实际数据处理提供独立 App 隐私政策。
 4. **对外信息**：`JEVAI WORKS` 是按域名采用的品牌写法；中文完整法人名称已经在首页、页脚和产品页呈现。若需要英文法人名称，请使用与登记 / D-U-N-S 一致的正式名称，不要将品牌名当作英文法人名称。
 5. **政策确认**：网站政策按本版静态站实际功能撰写。发布前确认内容；上线后将隐私页中的「计划通过 GitHub Pages 提供」更新为实际托管事实。以后接入分析、表单或其他第三方服务时同步更新政策。
@@ -58,4 +60,4 @@ Apple 要求公开可访问且正常工作的组织官网、关联组织的域�
 
 ## 素材来源
 
-`assets/little-elsewhere-icon.png` 与 `assets/little-elsewhere-world.png` 为用户本地提供的产品素材。没有复制合域网站的 Google Analytics 配置、联系信息或项目。
+`assets/little-elsewhere-icon.png` 与 `assets/little-elsewhere-world.png` 为用户本地提供的产品素材。`assets/little-elsewhere/` 的五张原始 PNG 来自用户提供的 Figma board 截图：`0 enter.png` → `arrival.png`、`1 home.png` → `lakeside.png`、`2 setting.png` → `prepare.png`、`3 focus.png` → `focus.png`、`4 after focus.png` → `discovery.png`。没有复制合域网站的 Google Analytics 配置、联系信息或项目。
