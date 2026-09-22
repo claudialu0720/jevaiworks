@@ -151,3 +151,37 @@ html:has(.preview-dialog[open]) { overflow: hidden; }
   .preview-dialog { padding: 10px; }
 }
 @media (prefers-reduced-motion: reduce) { .le-explore span, .le-zoom { transition: none; } }
+/* The existing lake palette and studio type carry the four-part product story. */
+.arrival-water { background: var(--mist); }
+.le-experience { display: grid; grid-template-columns: .85fr 1.15fr; gap: 10%; padding-block: 85px; }
+.experience-heading h2 { margin-top: 22px; }
+.experience-steps { list-style: none; padding: 0; margin: 0; }
+.experience-steps li { display: grid; grid-template-columns: 42px 1fr; gap: 20px; padding-block: 23px; border-top: 1px solid var(--lake-line); }
+.experience-steps li:first-child { padding-top: 0; border-top: 0; }
+.experience-steps li:last-child { padding-bottom: 0; }
+.step-number { font: 300 28px/1.5 var(--display); color: var(--lake); }
+.experience-steps h3 { font-size: 17px; font-weight: 500; }
+.experience-steps h3 span { display: block; font: 11px/1.8 var(--mono); color: var(--lake); margin-block: 4px 10px; }
+.experience-steps p { font-size: 14px; }
+.experience-steps .translation { margin-top: 5px; }
+.ambience-section { padding-block: 90px 0; }
+.ambience-section .landscape-figure { width: 86%; margin-left: auto; }
+.loot-section { padding-top: 80px; }
+.loot-section .wide-heading .eyebrow { margin-bottom: 22px; }
+.loot-section .landscape-figure { width: 86%; }
+.closing-status { margin-top: 26px; color: var(--lake); line-height: 1.9; }
+.closing-status span { display: inline-block; }
+.elsewhere-intro > .translation { max-width: 370px; }
+@media (max-width: 700px) {
+  .le-experience { grid-template-columns: 1fr; gap: 30px; padding-block: 50px; }
+  .experience-steps li { gap: 12px; }
+  .ambience-section, .loot-section { padding-top: 55px; }
+  .ambience-section .landscape-figure, .loot-section .landscape-figure, .landscape-figure { width: 100vw; margin-left: calc((100% - 100vw) / 2); }
+  .landscape-figure figcaption { padding-inline: 7vw; }
+  .landscape-figure .le-image-link { border-radius: 0; }
+  .preview-dialog.is-landscape .preview-image-wrap { overflow-x: auto; justify-content: flex-start; overscroll-behavior-x: contain; }
+  .preview-dialog.is-landscape .preview-image { width: 800px; min-width: 800px; max-width: none; max-height: none; }
+  .preview-hint { font-size: 11px; padding-bottom: 10px; }
+}
+.preview-hint { display: none; }
+@media (max-width: 700px) { .is-landscape .preview-hint { display: block; } }

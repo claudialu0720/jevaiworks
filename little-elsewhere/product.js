@@ -12,10 +12,16 @@
       if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
       opener = link;
+      const thumbnail = link.querySelector("img");
+      dialog.classList.toggle("is-landscape", Number(thumbnail.getAttribute("width")) > Number(thumbnail.getAttribute("height")));
       image.src = link.href;
       image.alt = link.querySelector('img').alt;
       caption.textContent = link.dataset.caption;
       dialog.showModal();
+      const viewport = dialog.querySelector(".preview-image-wrap");
+      image.decode().then(() => {
+        if (dialog.open) viewport.scrollLeft = (viewport.scrollWidth - viewport.clientWidth) / 2;
+      }).catch(() => {});
       close.focus();
     });
   });
