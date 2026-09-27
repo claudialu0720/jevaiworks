@@ -7,15 +7,9 @@
 .interior .header{position:relative}.product-hero{display:grid;grid-template-columns:1.05fr 1fr;gap:8%;padding:65px 7% 90px;max-width:1400px;margin:auto;align-items:center}.breadcrumb{font-size:13px;color:var(--muted);display:inline-block;margin-bottom:45px}.product-intro .app-icon{width:78px;height:78px;border-radius:18px;margin-top:30px}.product-intro h1{font:800 clamp(3rem,6vw,5.6rem)/1.02 var(--display);letter-spacing:-.055em;margin:22px 0}.product-intro h1 span{display:block;font:400 28px var(--body);letter-spacing:.2em;margin-top:24px}.product-intro .lead{font-size:22px;margin-top:30px}.product-intro .translation{margin-top:18px;max-width:420px}.release-note{border-top:1px solid var(--line);padding-top:23px;margin-top:32px}.release-note p{font-size:14px;color:var(--muted)}.release-note p+p{margin-top:8px}.world-figure{margin:0;position:relative}.world-figure img{width:100%;max-height:710px;object-fit:cover;border-radius:3px}.world-figure figcaption{font-size:12px;color:var(--muted);margin-top:12px}.product-story{background:var(--wash);padding:90px 7%;text-align:center}.product-story h2{font-size:clamp(1.8rem,3.2vw,2.7rem);line-height:1.6;font-weight:600}.product-story p{max-width:690px;margin:24px auto 0}.feature-section{max-width:1200px;margin:0 auto;padding:95px 5%}.feature-section>.section-heading{margin-bottom:50px}.features{display:grid;grid-template-columns:1fr 1fr;gap:45px 70px}.feature{border-top:1px solid var(--line);padding-top:25px}.feature h3{font-size:22px;font-weight:400;margin-bottom:15px}.feature h3 span{display:block;font:14px var(--mono);color:var(--blue);margin-top:7px}.feature .translation{font-size:14px}.product-credit{border-top:1px solid var(--line);padding:50px 5.8%;text-align:center}.product-credit h2{font-size:22px;font-weight:400}.product-credit p{font-size:14px}.product-credit .text-link{margin-top:20px}.legal{max-width:860px;margin:auto;padding:55px 30px 100px}.legal h1{font-size:40px;line-height:1.4;font-weight:500}.legal h1 span{display:block;font-size:22px;color:var(--muted)}.legal .updated{margin:22px 0 42px;font-size:13px;color:var(--muted)}.legal h2{font-size:21px;font-weight:500;margin:34px 0 16px}.legal p{line-height:1.95}.legal a{color:var(--blue);text-decoration:underline;text-underline-offset:4px}.legal .breadcrumb{text-decoration:none}.legal .translation{font-size:15px}.error-page{padding:100px 25px 150px;text-align:center}.error-page h1{font:700 100px var(--display);letter-spacing:-.05em}.error-page h2{font-size:24px;font-weight:400}.error-page .text-link{margin-top:30px}
 
 .product-card + .product-card{margin-top:40px}
-.aomy-art{min-height:610px;padding:32px;display:flex;flex-direction:column;justify-content:space-between;background:var(--signal);color:var(--ink)}
-.aomy-art-label,.aomy-art-footer{font:12px var(--mono);letter-spacing:.12em}
-.aomy-wordmark{display:block;font:800 clamp(3rem,6vw,6rem)/.95 var(--display);letter-spacing:-.06em}
-.aomy-wordmark>span{display:block;margin-top:16px;font:500 clamp(1rem,2vw,1.5rem)/1.4 var(--body);letter-spacing:.25em}
-.aomy-art-footer{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.aomy-art-footer>span{font-size:28px}
 .product-card--aomy .product-copy{justify-content:center}
 .aomy-destination{margin-top:16px;color:var(--muted);font:12px var(--mono)}
-@media(max-width:700px){.aomy-art{min-height:340px;padding:26px}.aomy-wordmark{font-size:clamp(2.75rem,13vw,6rem)}.product-card + .product-card{margin-top:30px}}
+@media(max-width:700px){.product-card + .product-card{margin-top:30px}}
 
 /* Product-portfolio direction: cobalt, sharp type and deliberate solid accents. */
 .header nav a{font-weight:600}
@@ -66,3 +60,7 @@
 
 .product-card--aomy .product-copy h3 br{display:block}
 @media(max-width:700px){.product-card--aomy .text-link{gap:10px}.product-card--aomy .text-link span[lang=en]{font-size:11px}.product-card--aomy .text-link span:last-child{margin-left:0}}
+
+.product-card--aomy .product-art{background:#202224}
+.product-card--aomy .product-art>img{object-fit:contain;object-position:center}
+@media(max-width:700px){.product-card--aomy .product-art{min-height:0;aspect-ratio:1}}
