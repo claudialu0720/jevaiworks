@@ -1,5 +1,9 @@
 # JEVAI WORKS · 界外造物
 
+> 法律草稿整合：`legal-review/privacy.md`、`legal-review/terms.md` 为双语审核源文件；`legal-review/REVIEW.md` 包含对照、问题和发布清单。运行 `node tools/legal-drafts.mjs` 生成 App 法律草稿页面。草稿保留 noindex，未批准前不得作为最终政策发布。
+
+> 2026-10-31 上线准备：当前交付和阻塞项以 [LAUNCH.md](LAUNCH.md) 为准。新增双语支持页及 App 隐私政策待确认草稿；隐私政策尚不可用于提交。发布状态默认 beta。先运行 `node tools/release.mjs` 生成状态相关静态页面，再运行 `node tools/check.mjs` 与 `node tools/release.test.mjs`。首页、产品页和条款页的内容源文件位于 `tools/templates/`；修改模板后重新生成。下文历史记录保留作为素材与发布背景。
+
 界外造物创意科技（青岛）有限公司官网。背景使用 cloudesign.space/product/ 线上新版的原始参数：#F7F8FA 底色、三层固定 OKLCH 渐变、26px 点阵、190px 鼠标影响半径，以及发光光标与 BROWSE 标签。保留简洁双语结构，突出数字产品、AI 与设计，包含 Little Elsewhere（别境）独立产品页。
 
 纯静态 HTML / CSS / JavaScript，无安装依赖，无构建步骤。资源均在本地，不加载第三方字体、统计或追踪脚本。

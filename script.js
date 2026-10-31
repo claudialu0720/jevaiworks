@@ -3,6 +3,11 @@
   const email = window.JEVAI_CONFIG?.email?.trim();
   if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     document.querySelectorAll('[data-contact]').forEach(container => {
+      if (container.matches('a')) {
+        container.href = 'mailto:' + email;
+        container.textContent = email;
+        return;
+      }
       const link = document.createElement('a');
       link.href = 'mailto:' + email;
       link.dataset.cursor = 'say hello';

@@ -171,3 +171,5 @@ html:has(.preview-dialog[open]) { overflow:hidden; }
   .is-landscape .preview-hint { display:block; font-size:11px; padding-bottom:10px; }
 }
 @media(prefers-reduced-motion:reduce) { .le-button, .le-zoom { transition:none; } }
+.le-resources { display:flex; flex-wrap:wrap; gap:12px 26px; padding-block:30px; }
+.le-resources a { padding-block:10px; text-decoration:underline; text-underline-offset:4px; }
