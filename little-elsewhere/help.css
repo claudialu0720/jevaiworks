@@ -1,0 +1,11 @@
+/* Existing legal typography, with the product lake palette. */
+.le-help { color:#214c58; }
+.le-help details { border-bottom:1px solid #b9cdd0; }
+.le-help summary { cursor:pointer; padding:20px 0; line-height:1.65; }
+.le-help summary span { display:block; font-size:14px; margin-top:4px; }
+.le-help details > div { padding:0 0 24px 18px; }
+.le-help section { scroll-margin-top:30px; }
+.help-links { display:flex; flex-wrap:wrap; gap:12px 26px; margin-top:36px; }
+.draft-notice { border-left:3px solid #567980; padding:14px 18px; margin-block:24px; background:#eaf1f1; }
+.le-help a { overflow-wrap:anywhere; }
+.le-help summary:focus-visible { outline:2px solid #214c58; outline-offset:4px; }
