@@ -18,6 +18,10 @@ node tools/preview.mjs
 
 访问 http://127.0.0.1:4173/ 。终端按 Ctrl+C 停止。也可以直接打开 index.html 查看首页；完整路由与 404 建议用本地预览。
 
+## App Store Support URL
+
+新增 `support/index.html`，目标地址 https://jevaiworks.com/support/ 。直接提供双语联系信息、购买恢复、订阅管理和本机数据帮助，无需登录或 JavaScript。使用 `node tools/support-page.mjs` 更新此页（复用产品支持页页头、页脚与联系资料）。产品页帮助入口链接至此，原产品支持页保留。App 法律政策仍为待批准草稿。此改动未部署；单独批准发布后需验证公开 HTTPS 地址及 `/support` 到 `/support/` 路由。
+
 ## 页面
 
 - `index.html`：首页（关于、领域、产品、联系）。
