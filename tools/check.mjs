@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const pages = ['index.html','little-elsewhere/index.html','privacy/index.html','terms/index.html','404.html','support/index.html'];
+const pages = ['index.html','little-elsewhere/index.html','privacy/index.html','terms/index.html','404.html','support/index.html','little-elsewhere/en/index.html','little-elsewhere/privacy/index.html','little-elsewhere/terms/index.html','little-elsewhere/en/privacy/index.html','little-elsewhere/en/terms/index.html'];
 const errors = [];
 let references = 0;
 for (const page of pages) {

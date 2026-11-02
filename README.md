@@ -75,3 +75,7 @@ Apple 要求公开可访问且正常工作的组织官网、关联组织的域�
 当前页面使用用户「little elsewhere images」目录根层的新素材（不使用 `ss/` 中的旧图）：`arrival.png`、`lakeside.png`、`focus.png`、`ambience.png`、`dicovery 1.png`、`discovery 2.png`、`icon.png`。发布素材以 `-beta.webp` 命名，横屏同时提供 800px 版本，实际尺寸写入 HTML；全部七张主素材约 0.86 MiB。旧素材保留，页面不再引用旧截图。
 
 内测指南可直接分享 https://www.jevaiworks.com/little-elsewhere/#beta 。当前仅支持 iOS，设备与系统兼容性以 TestFlight 显示为准。产品页未宣称正式上架，也没有虚构 Android 下载入口。
+
+## Little Elsewhere 新版（2026-11-02）
+
+产品页已分为中文和英文独立 URL，并新增 App 专属中英文法律入口。以 [LITTLE-ELSEWHERE-IMPLEMENTATION.md](LITTLE-ELSEWHERE-IMPLEMENTATION.md) 的改版说明、素材清单、构建/检查命令和法律待审事项为准；上文产品页双语并排及“App 法律页尚不存在”等历史描述已由本次实现替代。没有部署生产环境。

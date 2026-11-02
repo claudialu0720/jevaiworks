@@ -1,0 +1,201 @@
+/* V3 is scoped to marketing pages. The legal-page design and content stay intact. */
+.landing-page {
+  --paper: #ffffff;
+  --ink: #264e5a;
+  --muted: #446e7a;
+  --accent: #ddf3fa;
+  --line: #dfedf2;
+  background: #fff;
+  color: var(--ink);
+  font-family: "Avenir Next", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.landing-page h1, .landing-page h2, .landing-page h3 { font-weight: 400; }
+.landing-page h1 { font-size: clamp(38px, 3.7vw, 56px); line-height: 1.55; letter-spacing: .065em; }
+.landing-page:lang(en) h1 { line-height: 1.2; letter-spacing: -.025em; font-size: clamp(42px, 4.5vw, 64px); }
+.landing-page h2 { font-size: clamp(28px, 2.5vw, 36px); line-height: 1.65; letter-spacing: .045em; }
+.landing-page:lang(en) h2 { line-height: 1.4; letter-spacing: -.015em; }
+.landing-page h3 { font-size: 22px; line-height: 1.6; letter-spacing: .02em; }
+.landing-page p { font-size: 16px; line-height: 1.95; }
+.landing-page .wrap { width: min(1240px, calc(100% - 88px)); }
+.landing-page .content { width: min(1060px, calc(100% - 96px)); margin-inline: auto; }
+.landing-page .header { min-height: 100px; position: absolute; inset: 0 0 auto; z-index: 5; }
+.landing-page .brand { font-weight: 500; font-size: 17px; letter-spacing: .06em; }
+.landing-page .brand img { width: 36px; height: 36px; border-radius: 10px; }
+.landing-page .header nav { gap: 32px; }
+.landing-page .languages { font-size: 13px; }
+.landing-page .languages [aria-current] { font-weight: 500; }
+.landing-page .button {
+  color: #264e5a;
+  background: #ddf3fa;
+  border: 1px solid #b6e0ec;
+  border-radius: 6px;
+  min-height: 48px;
+  padding: 12px 24px;
+  gap: 23px;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: .025em;
+  box-shadow: none;
+}
+.landing-page .button:hover { background: #c8eaf5; transform: translateY(-1px); }
+.landing-page .header .button { background: #f1f9fc; padding: 9px 18px; min-height: 40px; font-size: 13px; }
+.landing-page .panorama { width: 100%; height: auto; object-fit: contain; border-radius: 0; }
+.landing-page .device { background: #29414a; padding: 4px; border-radius: 28px; width: 100%; }
+.landing-page .device-screen { width: 100%; height: auto; border-radius: 24px; }
+.landing-page .arrival { position: relative; isolation: isolate; min-height: 780px; height: calc(100vw * .3625 + 270px); max-height: 1020px; }
+.landing-page .arrival-copy { position: relative; z-index: 2; padding-top: 156px; margin-left: max(9%, calc((100% - 1180px) / 2)); max-width: 620px; }
+.landing-page .arrival-copy p { margin: 17px 0 25px; font-size: 16px; max-width: 440px; }
+.landing-page .arrival-copy .button { background: #fff; border-color: #9fcfdf; }
+.landing-page .arrival-copy .button:hover { background: #e7f5fb; }
+.landing-page .beta-status { display: block; font-size: 12px; color: #446e7a; margin-top: 13px; }
+.landing-page .arrival-scenery { position: absolute; z-index: -1; bottom: 30px; width: 100%; }
+.landing-page .arrival-scenery img { mask-image: linear-gradient(to bottom, transparent, #000 21%, #000 89%, transparent); }
+.landing-page .arrival-device { position: absolute; width: clamp(230px, 17.5vw, 305px); right: calc(14% - 40px); bottom: 110px; z-index: 1; }
+.landing-page .arrival-device .device { border-radius: clamp(28px, 2.7vw, 42px); }
+.landing-page .arrival-device .device-screen { border-radius: clamp(24px, 2.4vw, 38px); }
+.landing-page .journey-link { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); font-size: 13px; display: flex; gap: 20px; align-items: center; }
+.landing-page .settle { padding-block: 105px 100px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 100px; align-items: center; max-width: 880px; }
+.landing-page .settle-copy p { margin-top: 22px; }
+.landing-page .settle-copy dl { margin: 34px 0 0; display: flex; flex-direction: column; gap: 23px; }
+.landing-page .settle-copy dt { font-size: 15px; font-weight: 500; }
+.landing-page .settle-copy dd { margin: 6px 0 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+.landing-page .settle-interface { width: 186px; justify-self: center; position: relative; }
+.landing-page .settle-interface:before { content: ""; position: absolute; z-index: -1; inset: 15% -80% -5%; background: radial-gradient(ellipse, #e7f5fb, #fff 70%); }
+.landing-page .immersion { padding-top: 25px; }
+.landing-page .immersion-copy { text-align: center; margin-bottom: 38px; }
+.landing-page .immersion-copy h2 { font-size: clamp(26px, 2.2vw, 33px); }
+.landing-page .immersion-copy p { margin-top: 13px; }
+.landing-page .immersive-scene { width: 100%; }
+.landing-page .immersive-scene figcaption { text-align: center; font-size: 13px; color: var(--muted); padding-top: 20px; }
+.landing-page .discover { padding-top: 110px; position: relative; }
+.landing-page .discovery-copy { position: relative; z-index: 2; }
+.landing-page .discovery-copy p { margin-top: 20px; max-width: 650px; }
+.landing-page .discovery-water { position: relative; margin-top: 110px; }
+.landing-page .underwater img { mask-image: linear-gradient(transparent, #000 22%, #000 88%, transparent); }
+.landing-page .catch-interface { position: absolute; width: 190px; right: 17%; top: -260px; }
+.landing-page .catch-interface .device { transform: rotate(4deg); }
+.landing-page .catch-interface figcaption { text-align: center; color: var(--ink); font-size: 13px; line-height: 1.7; margin-top: 28px; }
+.landing-page .wander { padding-top: 85px; }
+.landing-page .wander-intro { text-align: center; }
+.landing-page .wander-intro p { margin-top: 20px; }
+.landing-page .changing-light { display: flex; gap: 40px; width: min(1380px, 94%); margin: 60px auto 110px; align-items: flex-start; }
+.landing-page .changing-light figure { flex: 1; min-width: 0; }
+.landing-page .changing-light figure:nth-child(2) { margin-top: 70px; }
+.landing-page .changing-light figcaption { font-size: 13px; color: var(--muted); margin: 14px 0 0 3px; }
+.landing-page .soundscape { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; width: min(1380px, 94%); max-width: none; padding-bottom: 90px; }
+.landing-page .changing-light .panorama,
+.landing-page .soundscape .panorama { border-radius: clamp(18px, 2.5vw, 36px); }
+.landing-page .soundscape h3 { font-size: 21px; }
+.landing-page .soundscape p { margin-top: 15px; font-size: 15px; }
+.landing-page .invitation { text-align: center; position: relative; isolation: isolate; padding-top: 65px; }
+.landing-page .invitation h2 { font-size: 30px; margin-bottom: 25px; }
+.landing-page .invitation .beta-status { margin: 14px 0 23px; }
+.landing-page .beta-help { max-width: 570px; }
+.landing-page .beta-help summary { font-size: 13px; text-decoration: none; }
+.landing-page .answer { background: #f1f9fc; border-radius: 4px; }
+.landing-page .answer p { font-size: 14px; }
+.landing-page .return-to-lake { margin-top: 20px; }
+.landing-page .return-to-lake img { mask-image: linear-gradient(transparent, #000 25%); }
+.landing-page .footer { padding-block: 34px; }
+.landing-page .footer-top { margin-bottom: 24px; font-size: 15px; }
+.landing-page .footer-bottom p { font-size: 11px; }
+.landing-page a:focus-visible, .landing-page summary:focus-visible { outline-color: #37758c; }
+@media (min-width: 1800px) {
+  .landing-page .arrival-copy { padding-top: 180px; }
+  .landing-page .arrival-device { right: calc((100vw - 1240px) / 2 - 50px); }
+}
+@media (max-width: 1100px) {
+  .landing-page .arrival { min-height: 720px; height: 760px; }
+  .landing-page .arrival-copy { margin-left: 7%; max-width: 540px; padding-top: 150px; }
+  .landing-page .arrival-device { right: 12%; bottom: 90px; width: 150px; }
+  .landing-page .settle { gap: 65px; padding-block: 85px; }
+  .landing-page .catch-interface { right: 9%; width: 160px; top: -200px; }
+  .landing-page .discovery-copy p { max-width: 560px; }
+  .landing-page .discovery-water { margin-top: 100px; }
+  .landing-page .soundscape { gap: 40px; }
+}
+@media (max-width: 700px) {
+  .landing-page .wrap { width: calc(100% - 36px); }
+  .landing-page .content { width: calc(100% - 44px); }
+  .landing-page .header { min-height: 78px; }
+  .landing-page .brand { font-size: 14px; letter-spacing: .02em; gap: 8px; }
+  .landing-page .brand img { width: 31px; height: 31px; border-radius: 9px; }
+  .landing-page .header nav { gap: 14px; }
+  .landing-page .header .button, .landing-page .header .explore { display: none; }
+  .landing-page h1 { font-size: 34px; line-height: 1.65; letter-spacing: .045em; }
+  .landing-page:lang(en) h1 { font-size: 43px; line-height: 1.22; }
+  .landing-page h2 { font-size: 28px; line-height: 1.6; }
+  .landing-page p { font-size: 15px; line-height: 1.9; }
+  .landing-page .arrival { min-height: 0; height: 610px; }
+  .landing-page .arrival-copy { padding-top: 117px; margin: 0 25px; max-width: none; }
+  .landing-page .arrival-copy p { max-width: 300px; font-size: 14px; margin: 19px 0 22px; }
+  .landing-page .arrival-copy .button { min-height: 45px; padding: 10px 20px; font-size: 13px; }
+  .landing-page .arrival .beta-status { font-size: 11px; margin-top: 11px; }
+  .landing-page .arrival-scenery { bottom: 45px; }
+  .landing-page .arrival-scenery img { mask-image: linear-gradient(transparent, #000 16%, #000 88%, transparent); }
+  .landing-page .arrival-device { width: 102px; right: 11%; bottom: 75px; }
+  .landing-page .device { padding: 3px; border-radius: 20px; }
+  .landing-page .device-screen { border-radius: 17px; }
+  .landing-page .arrival-device .device { border-radius: 17px; padding: 2px; }
+  .landing-page .arrival-device .device-screen { border-radius: 15px; }
+  .landing-page .journey-link { bottom: 0; font-size: 12px; }
+  .landing-page .settle { padding-block: 65px 75px; display: grid; grid-template-columns: 1fr 120px; gap: 22px; }
+  .landing-page .settle h2 { font-size: 25px; letter-spacing: .02em; }
+  .landing-page .settle-copy p { margin-top: 17px; font-size: 14px; }
+  .landing-page .settle-copy p br { display: none; }
+  .landing-page .settle-copy dl { margin-top: 24px; gap: 17px; }
+  .landing-page .settle-copy dt { font-size: 13px; }
+  .landing-page .settle-copy dd { font-size: 12px; margin-top: 3px; }
+  .landing-page .settle-interface { width: 120px; }
+  .landing-page .settle-interface:before { inset: 0 -10%; }
+  .landing-page .immersion { padding-top: 0; }
+  .landing-page .immersion-copy { margin-bottom: 26px; }
+  .landing-page .immersion-copy h2 { font-size: 25px; }
+  .landing-page .immersion-copy p { font-size: 14px; max-width: 300px; margin: 13px auto 0; }
+  .landing-page .immersive-scene figcaption { padding: 15px 20px 0; font-size: 12px; }
+  .landing-page .discover { padding-top: 65px; }
+  .landing-page .discovery-copy { text-align: center; }
+  .landing-page .discovery-copy h2 { font-size: 27px; }
+  .landing-page .discovery-copy p { font-size: 14px; max-width: 300px; margin: 18px auto 0; }
+  .landing-page .discovery-copy p br { display: none; }
+  .landing-page .discovery-water { padding-top: 230px; margin-top: 30px; }
+  .landing-page .catch-interface { width: 132px; top: 0; right: calc(50% - 66px); }
+  .landing-page .catch-interface .device { transform: rotate(3deg); }
+  .landing-page .catch-interface figcaption { font-size: 12px; margin-top: 18px; white-space: nowrap; transform: translateX(-20%); width: 140%; }
+  .landing-page .underwater img { mask-image: linear-gradient(transparent, #000 30%, #000 80%, transparent); }
+  .landing-page .wander { padding-top: 65px; }
+  .landing-page .wander-intro p { font-size: 14px; margin-top: 17px; }
+  .landing-page .wander-intro p br { display: none; }
+  .landing-page .changing-light { display: block; width: 100%; margin: 35px 0 55px; }
+  .landing-page .changing-light figure { width: 94%; }
+  .landing-page .changing-light figure:nth-child(2) { margin: 30px 0 0 6%; }
+  .landing-page .changing-light figcaption { font-size: 12px; margin-left: 22px; }
+  .landing-page .soundscape { grid-template-columns: 1fr; gap: 23px; padding-bottom: 55px; text-align: center; }
+  .landing-page .soundscape h3 { font-size: 20px; }
+  .landing-page .soundscape p { font-size: 14px; margin-top: 10px; }
+  .landing-page .invitation { padding-top: 25px; }
+  .landing-page .invitation h2 { font-size: 26px; }
+  .landing-page .return-to-lake { margin-top: 25px; }
+  .landing-page .footer nav { font-size: 12px; gap: 22px; }
+  .landing-page .footer-top { gap: 20px; }
+}
+@media (max-width: 360px) {
+  .landing-page .arrival-copy { margin-inline: 22px; }
+  .landing-page h1 { font-size: 30px; }
+  .landing-page:lang(en) h1 { font-size: 38px; }
+  .landing-page .settle { grid-template-columns: 1fr 100px; gap: 17px; }
+  .landing-page .settle-interface { width: 100px; }
+  .landing-page .settle h2 { font-size: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .landing-page *, .landing-page *:before, .landing-page *:after { transition: none !important; animation: none !important; }
+}
+
+/* Keep the discovery caption on the light sky, clear of the water. */
+.landing-page .catch-interface figcaption { position: absolute; top: -42px; left: -15%; width: 130%; margin: 0; color: #264e5a; }
+@media (max-width: 700px) {
+  .landing-page .catch-interface figcaption { top: -28px; left: -25%; width: 150%; transform: none; }
+}
+.landing-page .languages a { display: inline-flex; align-items: center; justify-content: center; min-height: 32px; min-width: 26px; }
+.landing-page .header .button { min-height: 44px; }

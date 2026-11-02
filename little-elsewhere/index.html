@@ -1,137 +1,73 @@
 <!doctype html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#F7F8FA">
-  <title>Little Elsewhere 别境 — JEVAI WORKS 界外造物</title>
-  <meta name="description" content="给专注一片风景，给日常一点别处。Little Elsewhere 别境 iOS 内测现已开放，通过 TestFlight 加入，开始专注、垂钓与发现。Join the iOS beta via TestFlight.">
-  <link rel="canonical" href="https://www.jevaiworks.com/little-elsewhere/">
-  <meta property="og:title" content="Little Elsewhere 别境 — JEVAI WORKS 界外造物">
-  <meta property="og:description" content="Little Elsewhere 别境 · iOS 内测已开放。A quiet focus companion. Join the iOS beta via TestFlight.">
-  <meta property="og:image" content="https://www.jevaiworks.com/assets/little-elsewhere/focus-beta.webp">
-  <meta property="og:image:alt" content="Little Elsewhere — a quiet lake, a small boat, and time to focus">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.jevaiworks.com/little-elsewhere/">
-  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../styles.css">
-  <link rel="stylesheet" href="../atmosphere.css">
-  <link rel="stylesheet" href="./product.css">
-  <script src="../site.config.js" defer></script>
-  <script src="../script.js" defer></script>
-  <script src="./product.js" defer></script>
-</head>
-<body class="interior elsewhere-page">
-  <div class="atmosphere" aria-hidden="true"></div>
-  <canvas id="field" data-motion="mesh" aria-hidden="true"></canvas>
-  <div class="cursor-ui" data-motion="cursor" aria-hidden="true"><div class="cursor-inner"><span class="cursor-dot"></span><span class="cursor-label">browse</span></div></div>
-  <a class="skip-link" href="#main">跳至主要内容 / Skip to content</a>
-  <header class="header">
-    <a data-cursor="index" class="brand" href="../" aria-label="Jevai Works 界外造物首页"><img class="brand-logo" src="../assets/logo.png" width="836" height="411" alt=""><span>JEVAI WORKS<span class="brand-cn">界外造物</span></span></a>
-    <nav aria-label="主导航"><a href="../#about">关于 <span lang="en">About</span></a><a href="../#domains">领域 <span lang="en">Domains</span></a><a href="../#work">产品 <span lang="en">Products</span></a><a href="../#contact">联系 <span lang="en">Contact</span></a></nav>
-  </header>
-  <main id="main">
-    <section class="elsewhere-hero le-container" aria-labelledby="product-title">
-      <div class="elsewhere-intro">
-        <a class="breadcrumb" href="../#work">← 返回产品 <span lang="en">/ All products</span></a>
-        <div class="le-identity"><img src="../assets/little-elsewhere/icon-beta.webp" width="256" height="256" alt="别境 App 图标"><p class="eyebrow" lang="en">A QUIET FOCUS COMPANION</p></div>
-        <h1 id="product-title" lang="en">Little<br>Elsewhere<span lang="zh-CN">别境</span></h1>
-        <p class="le-lead">给专注一片风景，<br>给日常一点别处。</p>
-        <p class="translation" lang="en">A little focus. A little fishing.<br>A little elsewhere.</p>
-        <div class="hero-actions">
-          <a class="le-button" href="https://testflight.apple.com/join/Uk9rZz5B">加入 iOS 内测 <span lang="en">Join the iOS beta</span><span aria-hidden="true">↗</span></a>
-          <a class="le-guide-link" href="#beta">安装指南 <span lang="en">How to join</span> ↓</a>
-        </div>
-        <p class="le-status"><span aria-hidden="true"></span>内测已开放 · 仅限 iOS <span lang="en">Beta open · iOS only · TestFlight</span></p>
-      </div>
-      <div class="arrival-scenes">
-        <div class="arrival-water" aria-hidden="true"></div>
-        <figure class="arrival-screen">
-          <a class="le-image-link" href="../assets/little-elsewhere/arrival-beta.webp" data-preview data-caption="把喧嚣留在岸上 · Leave the noise behind" data-cursor="view"><img src="../assets/little-elsewhere/arrival-beta.webp" width="640" height="1398" alt="别境入口：繁花与树影环绕着湖水，一叶小舟停在蓝天的倒影里" fetchpriority="high"><span class="le-zoom" aria-hidden="true">↗</span></a>
-          <figcaption>把喧嚣留在岸上 <span lang="en">Leave the noise behind.</span></figcaption>
-        </figure>
-        <figure class="arrival-screen arrival-screen-second">
-          <a class="le-image-link" href="../assets/little-elsewhere/lakeside-beta.webp" data-preview data-caption="从湖畔开始 · Meet you by the lake" data-cursor="view"><img src="../assets/little-elsewhere/lakeside-beta.webp" width="640" height="1387" alt="别境 Summer Lake 主页：专注记录、时长选择和 Start focus 按钮"><span class="le-zoom" aria-hidden="true">↗</span></a>
-          <figcaption>从湖畔开始 <span lang="en">Meet you by the lake.</span></figcaption>
-        </figure>
-      </div>
-    </section>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f1f9fc"><title>Little Elsewhere — 把繁忙留在岸上。我们湖心见。</title><meta name="description" content="一款把专注变成钓鱼时光的温柔计时器。"><link rel="canonical" href="https://jevaiworks.com/little-elsewhere/"><link rel="alternate" hreflang="zh-CN" href="https://jevaiworks.com/little-elsewhere/"><link rel="alternate" hreflang="en" href="https://jevaiworks.com/little-elsewhere/en/"><link rel="alternate" hreflang="x-default" href="https://jevaiworks.com/little-elsewhere/"><meta property="og:title" content="Little Elsewhere — 把繁忙留在岸上。我们湖心见。"><meta property="og:description" content="一款把专注变成钓鱼时光的温柔计时器。"><meta property="og:type" content="website"><meta property="og:url" content="https://jevaiworks.com/little-elsewhere/"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://jevaiworks.com/assets/little-elsewhere/redesign/lake.webp"><meta property="og:image:alt" content="别境湖畔风景"><link rel="icon" href="/assets/little-elsewhere/redesign/icon.webp"><link rel="stylesheet" href="/little-elsewhere/product.css"><script defer src="/little-elsewhere/product.js"></script><link rel="stylesheet" href="/little-elsewhere/landing-v3.css"></head><body class="landing-page">
+<a class="skip" href="#main">跳至主要内容</a><header class="header wrap"><a class="brand" href="/little-elsewhere/"><img src="/assets/little-elsewhere/redesign/icon.webp" width="42" height="42" alt=""><span>别境</span></a><nav aria-label="主导航"><a class="explore" href="/little-elsewhere/#explore">探索别境</a><div class="languages" role="group" aria-label="语言"><a href="/little-elsewhere/" lang="zh-CN" hreflang="zh-CN" aria-current="page">中</a><span aria-hidden="true">/</span><a href="/little-elsewhere/en/" lang="en" hreflang="en">EN</a></div><a class="button" href="https://testflight.apple.com/join/Uk9rZz5B">加入 iOS 内测<span aria-hidden="true">↗</span></a></nav></header>
+<main id="main">
+  <section class="arrival" aria-labelledby="arrival-title">
+    <div class="arrival-copy">
+      <h1 id="arrival-title">把繁忙留在岸上。<br>我们湖心见。</h1>
+      <p>一款把专注变成钓鱼时光的温柔计时器。</p>
+      <a class="button" href="https://testflight.apple.com/join/Uk9rZz5B">加入 iOS 内测<span aria-hidden="true">↗</span></a>
+      <span class="beta-status">iOS 内测 · 通过 TestFlight</span>
+    </div>
+    <figure class="arrival-scenery"><img class="panorama" src="/assets/little-elsewhere/redesign/lake-wide.webp" srcset="/assets/little-elsewhere/redesign/lake-wide-1000.webp 1000w, /assets/little-elsewhere/redesign/lake-wide.webp 2083w" sizes="100vw" width="2083" height="755" alt="开阔蓝天下的湖水、山峦、云朵倒影与一叶小舟" fetchpriority="high"></figure>
+    <div class="arrival-device"><div class="device "><img class="device-screen" src="/assets/little-elsewhere/redesign/prefocus-cn.webp" width="600" height="1300" alt="别境准备专注界面：时长、专注目标及声音设置" loading="lazy" decoding="async"></div></div>
+    <a class="journey-link" href="#explore">探索别境 <span aria-hidden="true">↓</span></a>
+  </section>
 
-    <nav class="journey-nav le-container" aria-label="探索别境 / Explore Little Elsewhere">
-      <p lang="en">A MOMENT ELSEWHERE</p>
-      <div><a href="#focus">专注 <span lang="en">Focus</span></a><a href="#ambience">声景 <span lang="en">Sounds</span></a><a href="#discover">发现 <span lang="en">Discover</span></a><a href="#beta">加入内测 <span lang="en">Join beta ↗</span></a></div>
-    </nav>
+  <section class="settle content" id="explore" aria-labelledby="settle-title">
+    <div class="settle-copy">
+      <h2 id="settle-title">留一点时间，<br>给眼前的事。</h2>
+      <p>选好专注时长，写下一个小目标。<br>剩下的，就交给湖水和风。</p>
+      <dl><div><dt>选一段时间</dt><dd>按自己的节奏，慢慢开始。</dd></div><div><dt>带上一点声音</dt><dd>音乐、自然声，或只是安静。</dd></div></dl>
+    </div>
+    <figure class="settle-interface"><div class="device "><img class="device-screen" src="/assets/little-elsewhere/redesign/prefocus-cn.webp" width="600" height="1300" alt="别境准备专注界面：时长、专注目标及声音设置" loading="lazy" decoding="async"></div></figure>
+  </section>
 
-    <section class="focus-section le-container" id="focus" aria-labelledby="focus-title">
-      <div class="section-heading">
-        <p class="eyebrow" lang="en">MAKE A LITTLE ROOM</p>
-        <h2 id="focus-title">留一段时间，给眼前的事。</h2>
-        <p class="translation" lang="en">Set a timer. Let the lake keep you company.</p>
-      </div>
-      <figure class="landscape-figure">
-        <a class="le-image-link" href="../assets/little-elsewhere/focus-beta.webp" data-preview data-caption="湖上时光 · A little room to focus" data-cursor="view"><img src="../assets/little-elsewhere/focus-beta.webp" srcset="../assets/little-elsewhere/focus-beta-800.webp 800w, ../assets/little-elsewhere/focus-beta.webp 1920w" sizes="(max-width: 700px) 100vw, (max-width: 1400px) 88vw, 1200px" width="1920" height="886" loading="lazy" decoding="async" alt="真实内测界面：专注倒计时下，小舟上的垂钓者被湖水、云朵倒影和湖畔繁花环绕"><span class="le-zoom" aria-hidden="true">↗</span></a>
-        <figcaption>湖上时光 <span lang="en">Time by the lake</span><span>点击放大 / Tap to explore ↗</span></figcaption>
-      </figure>
-    </section>
+  <section class="immersion" aria-labelledby="immersion-title">
+    <div class="immersion-copy content">
+      <h2 id="immersion-title">你专心，风景陪着你。</h2>
+      <p>云在走，水在流。让眼前的事，慢慢有了自己的节奏。</p>
+    </div>
+    <figure class="immersive-scene">
+      <img class="panorama" src="/assets/little-elsewhere/redesign/waterfall-wide.webp" srcset="/assets/little-elsewhere/redesign/waterfall-wide-1000.webp 1000w, /assets/little-elsewhere/redesign/waterfall-wide.webp 2200w" sizes="100vw" width="2200" height="1015" alt="真实专注界面：瀑布、湖水和垂钓者" loading="lazy" decoding="async">
+      <figcaption>在瀑布前，安静地度过这一段时间。</figcaption>
+    </figure>
+  </section>
 
-    <section class="ambience-section le-container" id="ambience" aria-labelledby="ambience-title">
-      <div class="chapter-copy">
-        <p class="eyebrow" lang="en">FIND YOUR SOUND</p>
-        <h2 id="ambience-title">雨声，鸟鸣，<br>或只是风。</h2>
-        <p>调配喜欢的自然声音，让心慢慢安静。</p>
-        <p class="translation" lang="en">Mix a little rain, birdsong or breeze.<br>Find the sounds you settle into.</p>
-      </div>
-      <figure class="landscape-figure">
-        <a class="le-image-link" href="../assets/little-elsewhere/ambience-beta.webp" data-preview data-caption="自己的声景 · Make yourself at home" data-cursor="view"><img src="../assets/little-elsewhere/ambience-beta.webp" srcset="../assets/little-elsewhere/ambience-beta-800.webp 800w, ../assets/little-elsewhere/ambience-beta.webp 1600w" sizes="(max-width: 700px) 100vw, (max-width: 1400px) 60vw, 816px" width="1600" height="738" loading="lazy" decoding="async" alt="内测声音设置：背景音乐与环境音开关，以及雨、风、水声、鸟鸣等独立音量滑杆"><span class="le-zoom" aria-hidden="true">↗</span></a>
-        <figcaption>自己的声景 <span lang="en">Make yourself at home</span></figcaption>
-      </figure>
-    </section>
+  <section class="discover" aria-labelledby="discover-title">
+    <div class="discovery-copy content">
+      <h2 id="discover-title">认真度过的时间，<br>会带来一点小惊喜。</h2>
+      <p>完成一段专注，钓起一条鱼，或是一件意外的小收藏。<br>每次回到湖边，都有新的期待。</p>
+    </div>
+    <div class="discovery-water">
+      <figure class="underwater"><img class="panorama" src="/assets/little-elsewhere/redesign/underwater-wide.webp" srcset="/assets/little-elsewhere/redesign/underwater-wide-1000.webp 1000w, /assets/little-elsewhere/redesign/underwater-wide.webp 2083w" sizes="100vw" width="2083" height="755" alt="小舟下方，阳光穿过清澈的蓝色湖水" loading="lazy" decoding="async"></figure>
+      <figure class="catch-interface"><div class="device "><img class="device-screen" src="/assets/little-elsewhere/redesign/catch-cn.webp" width="600" height="1300" alt="别境专注后的真实渔获界面" loading="lazy" decoding="async"></div><figcaption>专注结束，看看今天遇见了谁。</figcaption></figure>
+    </div>
+  </section>
 
-    <section class="discovery-section le-container" id="discover" aria-labelledby="discover-title">
-      <div class="discovery-main">
-        <div class="chapter-copy">
-          <p class="eyebrow" lang="en">FOCUS. FISH. FIND.</p>
-          <h2 id="discover-title">专注之后，<br>钓起一点小惊喜。</h2>
-          <p>一条鱼，一只贝壳，或是一封漂来的信。<br>为这段时光留下一点发现。</p>
-          <p class="translation" lang="en">A fish, a shell, a message in a bottle.<br>A small discovery to remember your time by.</p>
-        </div>
-        <figure class="landscape-figure">
-          <a class="le-image-link" href="../assets/little-elsewhere/discovery-beta.webp" data-preview data-caption="这次发现：漂流瓶 · A message finds you" data-cursor="view"><img src="../assets/little-elsewhere/discovery-beta.webp" srcset="../assets/little-elsewhere/discovery-beta-800.webp 800w, ../assets/little-elsewhere/discovery-beta.webp 1600w" sizes="(max-width: 700px) 100vw, (max-width: 1400px) 58vw, 792px" width="1600" height="738" loading="lazy" decoding="async" alt="垂钓后的发现：湖面上浮现一张漂流瓶收获卡，可以打开阅读里面的纸条"><span class="le-zoom" aria-hidden="true">↗</span></a>
-          <figcaption>这次发现：漂流瓶 <span lang="en">A message finds you</span></figcaption>
-        </figure>
-      </div>
-      <figure class="discovery-portrait">
-        <a class="le-image-link" href="../assets/little-elsewhere/oyster-beta.webp" data-preview data-caption="留下一点发现 · A little keepsake" data-cursor="view"><img src="../assets/little-elsewhere/oyster-beta.webp" width="640" height="1387" loading="lazy" decoding="async" alt="夕阳下的牡蛎发现卡片，显示物品介绍和记录这次专注的 Focus note"><span class="le-zoom" aria-hidden="true">↗</span></a>
-        <figcaption>留下一点发现 <span lang="en">A little keepsake</span></figcaption>
-      </figure>
-    </section>
+  <section class="wander" aria-labelledby="wander-title">
+    <div class="wander-intro content">
+      <h2 id="wander-title">还有一些别处，<br>等你慢慢发现。</h2>
+      <p>雨后的湖、月下的水面，还有喜欢的自然声音。<br>换一处风景，为日常留一点新鲜。</p>
+    </div>
+    <div class="changing-light">
+      <figure><img class="panorama" src="/assets/little-elsewhere/redesign/rainbow.webp" srcset="/assets/little-elsewhere/redesign/rainbow-800.webp 800w, /assets/little-elsewhere/redesign/rainbow.webp 1600w" sizes="100vw" width="1600" height="738" alt="雨过，天晴。" loading="lazy" decoding="async"><figcaption>雨过，天晴。</figcaption></figure>
+      <figure><img class="panorama" src="/assets/little-elsewhere/redesign/moon.webp" srcset="/assets/little-elsewhere/redesign/moon-800.webp 800w, /assets/little-elsewhere/redesign/moon.webp 1600w" sizes="100vw" width="1600" height="738" alt="月亮也来作伴。" loading="lazy" decoding="async"><figcaption>月亮也来作伴。</figcaption></figure>
+    </div>
+    <div class="soundscape content">
+      <figure><img class="panorama" src="/assets/little-elsewhere/redesign/music.webp" srcset="/assets/little-elsewhere/redesign/music-800.webp 800w, /assets/little-elsewhere/redesign/music.webp 1600w" sizes="100vw" width="1600" height="738" alt="别境背景音乐与环境音调节界面" loading="lazy" decoding="async"></figure>
+      <div><h3>把世界的声音，调到刚刚好。</h3><p>背景音乐与自然环境音，陪你安静一会儿。</p></div>
+    </div>
+  </section>
 
-    <section class="beta-section" id="beta" aria-labelledby="beta-title">
-      <div class="le-container">
-        <div class="beta-heading">
-          <div><p class="eyebrow" lang="en">AN INVITATION TO SLOW DOWN</p><h2 id="beta-title">来别境，坐一会儿。</h2><p class="translation" lang="en">Your little elsewhere is ready for a visit.</p></div>
-          <p class="beta-label">iOS 内测已开放<span lang="en">iOS beta · via TestFlight</span></p>
-        </div>
-        <ol class="beta-steps">
-          <li><span class="step-number" aria-hidden="true">01</span><h3>安装 TestFlight<span lang="en">Get TestFlight</span></h3><p>在 iPhone 上，从 App Store 安装 Apple 的 TestFlight。</p><p class="translation" lang="en">Install Apple’s TestFlight from the App Store on your iPhone.</p><a class="beta-step-link" href="https://apps.apple.com/app/testflight/id899247664">获取 TestFlight <span lang="en">Get TestFlight ↗</span></a></li>
-          <li><span class="step-number" aria-hidden="true">02</span><h3>打开内测邀请<span lang="en">Open the invitation</span></h3><p>用同一台 iPhone 打开别境邀请链接，按提示接受邀请。</p><p class="translation" lang="en">Open our invitation on the same iPhone and follow the prompts to accept.</p><a class="beta-step-link" href="https://testflight.apple.com/join/Uk9rZz5B">打开邀请 <span lang="en">Open invitation ↗</span></a></li>
-          <li><span class="step-number" aria-hidden="true">03</span><h3>安装，开始旅途<span lang="en">Install & settle in</span></h3><p>在 TestFlight 中点击「安装」，打开别境，开始第一段专注。</p><p class="translation" lang="en">Tap Install in TestFlight, open Little Elsewhere, and start your first focus session.</p></li>
-        </ol>
-        <div class="beta-actions"><a class="le-button" href="https://testflight.apple.com/join/Uk9rZz5B">加入 iOS 内测 <span lang="en">Join the iOS beta</span><span aria-hidden="true">↗</span></a><p>正在电脑上浏览？请用 iPhone 打开本页。<span lang="en">On a computer? Open this page on your iPhone.</span></p></div>
-        <div class="beta-help">
-          <details><summary>如何反馈？ <span lang="en">How can I share feedback?</span></summary><div><p>打开 TestFlight → Little Elsewhere →「发送 Beta 版反馈」。欢迎附上截图，告诉我们你的发现。</p><p class="translation" lang="en">In TestFlight, select Little Elsewhere, then Send Beta Feedback. Screenshots and a few words about your experience are always welcome.</p></div></details>
-          <details><summary>无法加入内测？ <span lang="en">Can’t join the beta?</span></summary><div><p>请用 iPhone 打开邀请，并检查 TestFlight 中显示的设备与系统要求。如果提示名额已满或暂不接受新测试员，请稍后再试。如需帮助，请联系 <a href="mailto:hello@jevaiworks.com" data-contact>hello@jevaiworks.com</a>。</p><p class="translation" lang="en">Open the invitation on your iPhone and check the device and system requirements shown in TestFlight. If the beta is full or isn’t accepting testers, try again later. Need a hand? Email <a href="mailto:hello@jevaiworks.com" data-contact>hello@jevaiworks.com</a>.</p></div></details>
-        </div>
-        <p class="beta-note">目前仅限 iOS，Android 暂未开放。内测版本仍在完善，功能与画面可能调整。<span lang="en">Currently iOS only; Android testing is not available. This is a beta, and features and visuals may change.</span></p>
-        <a class="testflight-help" href="https://testflight.apple.com/">Apple TestFlight 使用说明 <span lang="en">TestFlight help ↗</span></a>
-      </div>
-    </section>
-  </main>
-  <footer class="footer"><div class="footer-top"><a class="footer-brand" href="../">JEVAI WORKS <span>界外造物</span></a><p lang="en">Thoughtfully imagined. Carefully made.</p></div><div class="footer-bottom"><p>© 2026 Jevai Works Creative Technology (Qingdao) Co., Ltd. · 界外造物创意科技（青岛）有限公司</p><nav aria-label="页脚导航"><a href="../privacy/">隐私政策 / Privacy</a><a href="../terms/">使用条款 / Terms</a><a href="../#contact">联系 / Contact</a></nav></div></footer>
-  <dialog class="preview-dialog" aria-labelledby="preview-caption">
-    <div class="preview-toolbar"><p id="preview-caption"></p><button type="button" class="preview-close" aria-label="关闭图片预览 / Close preview">关闭 / Close <span aria-hidden="true">×</span></button></div>
-    <p class="preview-hint">左右滑动查看细节 / Swipe to explore the full screen.</p>
-    <div class="preview-image-wrap" tabindex="0" role="region" aria-label="图片细节 / Image details"><img class="preview-image" alt=""></div>
-  </dialog>
-</body>
-</html>
+  <section class="invitation" id="beta" aria-labelledby="invitation-title">
+    <div class="content">
+      <h2 id="invitation-title">给自己一小段别处的时间。</h2>
+      <a class="button" href="https://testflight.apple.com/join/Uk9rZz5B">加入 iOS 内测<span aria-hidden="true">↗</span></a>
+      <p class="beta-status">iOS 内测 · 通过 TestFlight</p>
+      <details class="beta-help"><summary>如何加入内测？</summary><div class="answer"><p>在 iPhone 上安装 Apple 的 <a href="https://apps.apple.com/app/testflight/id899247664">TestFlight</a>，再打开本页的内测邀请，在 TestFlight 中接受邀请并安装别境。</p><p>若暂时无法加入，请查看邀请页的名额和设备要求。可通过 TestFlight 发送 Beta 版反馈，或联系 <a href="mailto:hello@jevaiworks.com">hello@jevaiworks.com</a>。</p></div></details>
+    </div>
+    <figure class="return-to-lake" aria-hidden="true"><img class="panorama" src="/assets/little-elsewhere/redesign/lake-wide.webp" srcset="/assets/little-elsewhere/redesign/lake-wide-1000.webp 1000w, /assets/little-elsewhere/redesign/lake-wide.webp 2083w" sizes="100vw" width="2083" height="755" alt="" loading="lazy" decoding="async"></figure>
+  </section>
+</main>
+<footer class="footer wrap"><div class="footer-top"><a href="/little-elsewhere/">Little Elsewhere</a><nav aria-label="页脚导航"><a href="/little-elsewhere/privacy">隐私政策</a><a href="/little-elsewhere/terms">用户服务协议</a><a href="mailto:hello@jevaiworks.com">联系</a></nav></div><div class="footer-bottom"><a class="footer-credit" href="/">界外造物出品</a><p>© 2026 界外造物创意科技（青岛）有限公司</p></div></footer></body></html>
