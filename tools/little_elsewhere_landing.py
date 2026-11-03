@@ -21,7 +21,7 @@ TEXT = {
  },
  'en': {
   'title': 'A little focus. A little fishing.',
-  'description': 'A cozy Pomodoro timer with soothing sounds and little discoveries.',
+  'description': 'A cozy Pomodoro timer with soothing sounds<br>and little discoveries.',
   'support': 'Set a timer, settle by the water, and focus on what matters.',
   'how': 'A little surprise after every session.',
   'steps': [('Set your timer', 'Choose a little time to study, work, or read.'), ('Settle by the water', 'Let gentle music and nature sounds keep you company.'), ("See what you've caught", 'A fish, a treasure, or something unexpected.')],
