@@ -1,0 +1,17 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="62.8317" height="62.8317" viewBox="0 0 62.8317 62.8317" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 100">
+<foreignObject x="-31.4159" y="-31.4159" width="125.663" height="125.663"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(15.71px);clip-path:url(#bgblur_0_0_69_clip_path);height:100%;width:100%"></div></foreignObject><g id="Ellipse 30" data-figma-bg-blur-radius="31.4159">
+<circle cx="31.4158" cy="31.4158" r="31.4158" fill="white" fill-opacity="0.18"/>
+<circle cx="31.4158" cy="31.4158" r="30.3687" stroke="white" stroke-opacity="0.3" stroke-width="2.09439"/>
+</g>
+<g id="Group">
+<path id="Vector" d="M23.7469 40.9878C23.7469 43.7731 21.489 46.0311 18.7036 46.0311C15.9183 46.0311 13.6603 43.7731 13.6603 40.9878C13.6603 38.2024 15.9183 35.9445 18.7036 35.9445C21.489 35.9445 23.7469 38.2024 23.7469 40.9878Z" stroke-width="3.14159" stroke-linecap="round" stroke-linejoin="round" stroke="white"/>
+<path id="Vector_2" d="M46.4425 34.6842C46.4425 37.4696 44.1846 39.7275 41.3992 39.7275C38.6139 39.7275 36.3559 37.4696 36.3559 34.6842C36.3559 31.8989 38.6139 29.6409 41.3992 29.6409C44.1846 29.6409 46.4425 31.8989 46.4425 34.6842Z" stroke-width="3.14159" stroke-linecap="round" stroke-linejoin="round" stroke="white"/>
+<path id="Vector_3" d="M46.4457 34.6825V14.9126C46.4446 14.7197 46.3993 14.5296 46.3132 14.3569C46.227 14.1843 46.1025 14.0337 45.949 13.9168C45.7955 13.7998 45.6173 13.7197 45.428 13.6825C45.2387 13.6453 45.0433 13.652 44.857 13.7022L24.6837 19.3003C24.4171 19.3721 24.1815 19.5294 24.0129 19.748C23.8444 19.9667 23.7523 20.2346 23.7507 20.5107V40.9866" stroke-width="3.14159" stroke-linecap="round" stroke-linejoin="round" stroke="white"/>
+<path id="Vector_4" d="M23.7507 27.1179L46.4457 20.8137" stroke-width="3.14159" stroke-linecap="round" stroke-linejoin="round" stroke="white"/>
+</g>
+</g>
+<defs>
+<clipPath id="bgblur_0_0_69_clip_path" transform="translate(31.4159 31.4159)"><circle cx="31.4158" cy="31.4158" r="31.4158"/>
+</clipPath></defs>
+</svg>

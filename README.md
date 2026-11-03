@@ -2,7 +2,17 @@
 
 界外造物创意科技（青岛）有限公司官网。背景使用 cloudesign.space/product/ 线上新版的原始参数：#F7F8FA 底色、三层固定 OKLCH 渐变、26px 点阵、190px 鼠标影响半径，以及发光光标与 BROWSE 标签。保留简洁双语结构，突出数字产品、AI 与设计，包含 Little Elsewhere（别境）独立产品页。
 
-纯静态 HTML / CSS / JavaScript，无安装依赖，无构建步骤。资源均在本地，不加载第三方字体、统计或追踪脚本。
+纯静态 HTML / CSS / JavaScript，无安装依赖。字体与图片在本地；网站通过 Google Analytics 4 统计访问数据。Little Elsewhere 页面由 `tools/build-little-elsewhere.py` 生成。
+
+## 网站访问统计（2026-11-03）
+
+- 公司官网首页、网站隐私、条款、帮助和 404 页使用 `G-616N96L3W2`（Jevaiworks）。
+- `/little-elsewhere/` 下六个中英文介绍及法律页面使用 `G-212DEYMSND`（Little Elsewhere）。每页只配置一个 ID，避免向两个流重复发送同一页面浏览。
+- 使用 Google 官方异步 `gtag.js`，自动发送页面浏览；滚动、出站点击等由 GA 后台的增强型衡量设置控制。代码关闭 Google signals 和广告个性化信号。
+- 产品页生成模板同步保留 Google tag，重新生成页面不会丢失统计代码。网站统计说明见 `/privacy/`；App 法律原文不作为网站统计说明。
+- 发布至 GitHub Pages 后，打开正式网址并在 GA 的实时报告或“Test installation”中验证。普通报告可能需要 24–48 小时处理；接入前的访问无法补录。
+- 两个数据流若位于同一媒体资源，默认报告可合并展示；按数据流名称或页面路径筛选可分别查看。网站数据流的 URL 字段不会自动限制采集路径，实际归属由各页面的衡量 ID 决定。
+- 在本地浏览器预览时，Google tag 也会执行；只检查布局时可屏蔽第三方统计请求，避免测试访问进入报表。
 
 ## 本地预览
 

@@ -1,0 +1,9 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="88.6667" height="88.6667" viewBox="0 0 88.6667 88.6667" fill="none" xmlns="http://www.w3.org/2000/svg">
+<foreignObject x="-15.8333" y="-15.8333" width="120.333" height="120.333"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(7.92px);clip-path:url(#bgblur_0_0_15_clip_path);height:100%;width:100%"></div></foreignObject><g id="Ellipse 78" data-figma-bg-blur-radius="15.8333">
+<circle cx="44.3333" cy="44.3333" r="44.3333" fill="#2D6B86" fill-opacity="0.3"/>
+<circle cx="44.3333" cy="44.3333" r="43.5417" stroke="white" stroke-opacity="0.5" stroke-width="1.58333"/>
+</g>
+<defs>
+<clipPath id="bgblur_0_0_15_clip_path" transform="translate(15.8333 15.8333)"><circle cx="44.3333" cy="44.3333" r="44.3333"/>
+</clipPath></defs>
+</svg>

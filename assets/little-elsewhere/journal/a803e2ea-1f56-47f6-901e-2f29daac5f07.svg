@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="35.6046" height="35.6046" viewBox="0 0 35.6046 35.6046" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 100">
+<foreignObject x="-31.4159" y="-31.4159" width="98.4363" height="98.4363"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(15.71px);clip-path:url(#bgblur_0_0_7_clip_path);height:100%;width:100%"></div></foreignObject><g id="Ellipse 30" data-figma-bg-blur-radius="31.4159">
+<circle cx="17.8023" cy="17.8023" r="17.8023" fill="#5AA5C3"/>
+<circle cx="17.8023" cy="17.8023" r="16.7551" stroke="white" stroke-opacity="0.3" stroke-width="2.09439"/>
+</g>
+<path id="Vector" d="M27.1039 17.4378C27.1039 17.0717 26.9584 16.7205 26.6995 16.4616C26.4406 16.2027 26.0895 16.0572 25.7233 16.0572H20.201V10.5349C20.201 10.1687 20.0555 9.81757 19.7966 9.55866C19.5377 9.29975 19.1865 9.1543 18.8204 9.1543H17.4398C17.0736 9.1543 16.7225 9.29975 16.4636 9.55866C16.2046 9.81757 16.0592 10.1687 16.0592 10.5349V16.0572H10.5368C10.1707 16.0572 9.81953 16.2027 9.56061 16.4616C9.3017 16.7205 9.15625 17.0717 9.15625 17.4378V18.8184C9.15625 19.1846 9.3017 19.5357 9.56061 19.7946C9.81953 20.0535 10.1707 20.199 10.5368 20.199H16.0592V25.7213C16.0592 26.0875 16.2046 26.4387 16.4636 26.6976C16.7225 26.9565 17.0736 27.1019 17.4398 27.1019H18.8204C19.1865 27.1019 19.5377 26.9565 19.7966 26.6976C20.0555 26.4387 20.201 26.0875 20.201 25.7213V20.199H25.7233C26.0895 20.199 26.4406 20.0535 26.6995 19.7946C26.9584 19.5357 27.1039 19.1846 27.1039 18.8184V17.4378Z" fill="white" stroke-width="2.09439" stroke-linecap="round" stroke-linejoin="round" stroke="white"/>
+</g>
+<defs>
+<clipPath id="bgblur_0_0_7_clip_path" transform="translate(31.4159 31.4159)"><circle cx="17.8023" cy="17.8023" r="17.8023"/>
+</clipPath></defs>
+</svg>

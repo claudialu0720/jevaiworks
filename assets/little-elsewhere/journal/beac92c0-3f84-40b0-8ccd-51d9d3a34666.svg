@@ -1,0 +1,15 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="62.8319" height="62.8318" viewBox="0 0 62.8319 62.8318" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 99">
+<foreignObject x="-31.4157" y="-31.4159" width="125.663" height="125.663"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(15.71px);clip-path:url(#bgblur_0_0_84_clip_path);height:100%;width:100%"></div></foreignObject><g id="Ellipse 29" data-figma-bg-blur-radius="31.4159">
+<circle cx="31.416" cy="31.4158" r="31.4158" fill="white" fill-opacity="0.18"/>
+<circle cx="31.416" cy="31.4158" r="30.3687" stroke="white" stroke-opacity="0.3" stroke-width="2.09439"/>
+</g>
+<g id="Group">
+<path id="Vector" d="M23.9529 16.3924L16.3879 24.3556L23.9529 32.3187" stroke-width="3.14159" stroke-linecap="round" stroke-linejoin="round" stroke="white"/>
+<path id="Vector_2" d="M16.3879 24.3564H39.083C41.7581 24.3564 44.3237 25.4751 46.2154 27.4663C48.107 29.4574 49.1697 32.1581 49.1697 34.974C49.1697 37.79 48.107 40.4906 46.2154 42.4818C44.3237 44.473 41.7581 45.5916 39.083 45.5916H26.4746" stroke-width="3.14159" stroke-linecap="round" stroke-linejoin="round" stroke="white"/>
+</g>
+</g>
+<defs>
+<clipPath id="bgblur_0_0_84_clip_path" transform="translate(31.4157 31.4159)"><circle cx="31.416" cy="31.4158" r="31.4158"/>
+</clipPath></defs>
+</svg>
