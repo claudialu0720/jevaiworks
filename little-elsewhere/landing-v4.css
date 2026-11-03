@@ -209,12 +209,16 @@
 .journal-caption {margin-top:76px;border-top:1px solid var(--line);padding-top:28px;text-align:center}
 .landing-page .journal-caption h2,.landing-page .journal-caption h3 {font-size:19px;line-height:1.5;letter-spacing:0;text-shadow:none;text-wrap:initial}
 .landing-page .journal-caption p {font-size:14px;line-height:1.8!important;letter-spacing:0;color:var(--muted);margin:0}
+.landing-page:lang(zh-CN) .journal-caption p {font-size:19px;line-height:1.5!important;font-weight:var(--heading-weight);color:var(--ink)}
+.landing-page:lang(en) .journal-caption p {font-size:19px;line-height:1.5!important}
 .journal-scene .page-reveal {--reveal-distance:32px}
 @media(min-width:701px) and (max-width:1100px) {
  .journal-scene {padding:76px 0}
  .journal-layout {width:calc(100% - 64px);grid-template-columns:21% 43% 26%}
  .journal-caption {margin-top:48px;padding-top:22px}
  .landing-page .journal-caption h2,.landing-page .journal-caption h3 {font-size:17px}
+ .landing-page:lang(zh-CN) .journal-caption p {font-size:17px}
+ .landing-page:lang(en) .journal-caption p {font-size:17px}
 }
 @media(max-width:700px) {
  .journal-scene {padding:64px 0 72px}
@@ -225,6 +229,8 @@
  .journal-notes-stack {width:90%;gap:28px}
  .journal-caption {width:90%;margin-top:28px;padding-top:20px}
  .landing-page .journal-caption h2,.landing-page .journal-caption h3 {font-size:18px}
+ .landing-page:lang(zh-CN) .journal-caption p {font-size:18px}
+ .landing-page:lang(en) .journal-caption p {font-size:18px}
  .journal-scene .page-reveal {--reveal-distance:24px;transition-delay:80ms}
 }
 
@@ -237,6 +243,7 @@
 .worlds-layer,.worlds-drift {position:absolute;inset:0}
 .worlds-scene .worlds-background {pointer-events:none}
 .worlds-music-panel,.worlds-map-panel {pointer-events:none}
+.worlds-music-copy>div,.worlds-map-copy>div {font-size:46px!important}
 .worlds-scene .page-reveal {--reveal-distance:65px}
 @media(max-width:700px) {
  .worlds-scene {aspect-ratio:auto}
@@ -271,6 +278,12 @@
 .rewards-canvas p {color:inherit}
 .reward-layer,.reward-drift {position:absolute;inset:0;pointer-events:none}
 .reward-background {position:absolute;inset:0}
+.reward-pond-copy .reward-drift>div {font-size:40px!important}
+@media(min-width:701px) {
+ .rewards-scene:lang(en) .reward-intro .reward-drift>div {width:900px!important}
+ .rewards-scene:lang(en) .reward-treasure-copy .reward-drift>div {width:1000px!important}
+ .worlds-scene:lang(en) .worlds-music-copy>div {width:900px!important}
+}
 .rewards-scene.motion-ready .reward-layer {opacity:0;transform:translateY(65px);transition:opacity 1.15s ease var(--delay),transform 1.3s cubic-bezier(.18,.85,.28,1.12) var(--delay)}
 .rewards-scene.motion-ready .reward-layer.is-revealed {opacity:1;transform:translateY(0)}
 .reward-puffer .reward-drift,.reward-hat .reward-drift,.reward-jar .reward-drift,.reward-note .reward-drift,.reward-decoration .reward-drift {animation:reward-float var(--period,7s) ease-in-out infinite alternate;animation-delay:calc(var(--delay) + 1.3s);animation-play-state:paused}

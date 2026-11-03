@@ -3,10 +3,10 @@ from pathlib import Path
 TEXT = {
  'zh-CN': {
   'title': '把专注变成一场安静的垂钓。',
-  'description': '一款融合番茄钟、钓鱼收集与舒缓音景的专注计时器。',
-  'support': '选一段时间，让风景和水声陪你完成眼前的事。',
+  'description': '一款可以边专注、边钓鱼的番茄钟。',
+  'support': '选一段时间，让风景、水声和音乐陪你完成眼前的事。',
   'how': '专注片刻，收获一点小惊喜。',
-  'steps': [('选择时间', '学习、工作或阅读，从这里开始。'), ('沉浸湖畔', '让水声与音乐陪你慢慢专注。'), ('钓起惊喜', '完成专注，看看今天有什么收获。')],
+  'steps': [('选择时间', '学习、工作或阅读，从这里开始。'), ('沉浸湖畔', '让水声与音乐陪你慢慢专注。'), ('钓起惊喜', '专注结束，看看今天钓到了什么。')],
   'discover': '让认真度过的时间，变成看得见的回忆。',
   'discoverText': '收集不同的鱼类和奇妙物品，把喜欢的小鱼放进池塘。探索更多风景与声音，让每次专注都有一点期待。',
   'labels': ['渔获收集', '自然音景', '更多风景'],
@@ -21,10 +21,10 @@ TEXT = {
  },
  'en': {
   'title': 'A little focus. A little fishing.',
-  'description': 'A cozy Pomodoro and focus timer with peaceful soundscapes, fishing, and little surprises along the way.',
+  'description': 'A cozy Pomodoro timer with soothing sounds and little discoveries.',
   'support': 'Set a timer, settle by the water, and focus on what matters.',
   'how': 'A little surprise after every session.',
-  'steps': [('Set your timer', 'Start with a little time for studying, working, or reading.'), ('Settle by the water', 'Let gentle music and nature sounds keep you company.'), ("See what you've caught", 'Finish your session and discover a little surprise.')],
+  'steps': [('Set your timer', 'Choose a little time to study, work, or read.'), ('Settle by the water', 'Let gentle music and nature sounds keep you company.'), ("See what you've caught", 'A fish, a treasure, or something unexpected.')],
   'discover': 'Little discoveries, lasting memories.',
   'discoverText': 'Collect fish and treasures, fill your personal pond, and explore peaceful worlds at your own pace.',
   'labels': ['Collect your catches', 'Peaceful soundscapes', 'More worlds to explore'],
