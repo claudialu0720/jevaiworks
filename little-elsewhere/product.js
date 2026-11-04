@@ -3,6 +3,37 @@ try {
   localStorage.setItem('little-elsewhere-language', document.documentElement.lang === 'en' ? 'en' : 'zh-CN');
 } catch { /* Navigation remains usable when storage is unavailable. */ }
 
+document.querySelectorAll('.focus-preview').forEach(preview => {
+  const image = preview.querySelector('.focus-preview-image');
+  const standardPreview = preview.querySelector('[data-standard-preview]');
+  const duoPreview = preview.querySelector('[data-duo-preview]');
+  const switchButton = preview.querySelector('.focus-switch');
+  if (!switchButton || (!image && !(standardPreview && duoPreview))) return;
+  const original = image && {
+    src: image.getAttribute('src'),
+    alt: image.alt,
+    width: image.getAttribute('width'),
+    height: image.getAttribute('height')
+  };
+  let showingDuo = false;
+  switchButton.hidden = false;
+  switchButton.addEventListener('click', () => {
+    showingDuo = !showingDuo;
+    if (image) {
+      const {duoSrc, duoAlt, duoWidth, duoHeight} = switchButton.dataset;
+      image.src = showingDuo ? duoSrc : original.src;
+      image.alt = showingDuo ? duoAlt : original.alt;
+      image.width = Number(showingDuo ? duoWidth : original.width);
+      image.height = Number(showingDuo ? duoHeight : original.height);
+    } else {
+      standardPreview.hidden = showingDuo;
+      duoPreview.hidden = !showingDuo;
+    }
+    switchButton.textContent = showingDuo ? switchButton.dataset.soloLabel : switchButton.dataset.duoLabel;
+    switchButton.setAttribute('aria-pressed', String(showingDuo));
+  });
+});
+
 // Reveal each part of the landing page once, as it comes into view.
 // Observe steps separately so a stacked mobile journey follows the reader.
 if (document.body.classList.contains('landing-page') && 'IntersectionObserver' in window) {
@@ -25,7 +56,7 @@ if (document.body.classList.contains('landing-page') && 'IntersectionObserver' i
     register('.journal-record-title', 80);
     register('.journal-record', 260);
     register('.journal-description', 300);
-    register('.journal-focus', 480);
+    register('.journal-focus-preview', 480);
     register('.journal-notes-title', 400);
     register('.journal-notes', 650);
     register('.journal-todo', 850);

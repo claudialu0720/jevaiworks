@@ -59,6 +59,11 @@
 .landing-page .journey-step figure {display:flex;flex-direction:column}
 .landing-page .journey-step:nth-child(2) figure {padding-bottom:0}
 .landing-page .journey-step:nth-child(2) .landscape-screen {border-radius:0;box-shadow:none}
+.landing-page .focus-preview {display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0}
+.landing-page .focus-switch {margin-top:14px;padding:7px 10px;border:0;border-radius:4px;background:transparent;color:var(--ink);font:inherit;font-size:15px;line-height:1.4;text-decoration:underline;text-underline-offset:5px;cursor:pointer}
+.landing-page .focus-switch:hover {color:#287589}
+.landing-page .focus-switch:focus-visible {outline:2px solid #287589;outline-offset:3px}
+.landing-page .focus-switch[hidden] {display:none}
 .landing-page .journey-step figcaption {min-height:116px;margin-top:28px;border-top:1px solid var(--line);padding-top:17px;text-align:center}
 .landing-page .journey-step h3 {display:flex;align-items:baseline;justify-content:center;gap:12px}
 .landing-page .step-number {font-size:12px;color:#40778a}
@@ -100,7 +105,8 @@
  .landing-page .journey {grid-template-columns:17% 45% 17%;justify-content:space-between;gap:0;align-items:start}
  .landing-page .journey-step figure {display:grid;grid-template-rows:var(--journey-height) auto}
  .landing-page .journey-step .device {width:min(100%,calc(var(--journey-height) * .469));max-width:270px;margin:0;align-self:start;justify-self:center}
- .landing-page .journey-step:nth-child(2) .landscape-screen {align-self:center;transform:translateY(16px)}
+ .landing-page .focus-preview {height:var(--journey-height);transform:translateY(16px)}
+ .landing-page .focus-preview .landscape-screen {width:auto;max-width:100%;max-height:calc(var(--journey-height) - 55px);object-fit:contain}
  .landing-page .journey-step figcaption {margin-top:76px;padding-top:32px;min-height:90px}
  .landing-page .journey-step p {max-width:none}
 }
@@ -140,6 +146,8 @@
  .landing-page .journey-step h3 {font-size:18px;gap:8px}
  .landing-page .journey-step p {margin-left:0;font-size:14px}
  .landing-page .journey-step:nth-child(2) figure {grid-template-columns:1fr;gap:18px}
+ .landing-page .focus-preview {height:auto;transform:none}
+ .landing-page .focus-preview .landscape-screen {width:100%;max-height:none}
  .landing-page .journey-step:nth-child(2) figcaption {display:grid;grid-template-columns:40% 1fr;gap:24px}
  .landing-page .journey-step:nth-child(2) p {margin:0}
  .landing-page .discover {padding-block:50px}
@@ -194,6 +202,12 @@
 .journal-visual {position:relative;container-type:inline-size;pointer-events:none}
 .journal-record {width:min(100%,calc(var(--journal-height) * .489));aspect-ratio:563/1151;align-self:start;justify-self:center}
 .journal-focus {width:100%;aspect-ratio:1924/944;align-self:center}
+/* Match the standard iPhone lake layer to the exported Duo screenshots. */
+.journal-color-filters {position:absolute}
+.journal-lake {filter:url(#journal-lake-color)}
+.journal-focus-preview {width:100%;align-self:center}
+.journal-duo {width:100%;height:auto;max-height:calc(var(--journal-height) - 55px);object-fit:contain}
+.journal-duo[hidden] {display:none}
 .journal-notes-stack {display:flex;flex-direction:column;justify-content:center;gap:clamp(24px,2.5vw,44px)}
 .journal-notes,.journal-todo {width:100%;aspect-ratio:738.234/425.743}
 .journal-content {position:absolute;left:0;top:0;width:4177px;height:1514px;transform-origin:0 0}
@@ -226,6 +240,7 @@
  .journal-column {display:flex;flex-direction:column;align-items:center}
  .journal-record {width:min(50%,210px);align-self:center}
  .journal-focus {width:100%}
+ .journal-duo {max-height:none}
  .journal-notes-stack {width:90%;gap:28px}
  .journal-caption {width:90%;margin-top:28px;padding-top:20px}
  .landing-page .journal-caption h2,.landing-page .journal-caption h3 {font-size:18px}

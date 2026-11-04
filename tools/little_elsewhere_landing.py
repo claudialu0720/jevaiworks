@@ -13,6 +13,10 @@ TEXT = {
   'closing': '先从一段专注、一条小鱼开始吧。',
   'closingText': '不用急着成为更自律的人。按照自己的节奏，慢慢来。',
   'alts': ['专注设置：时长、目标与声音', '专注进行中：彩虹下的湖畔垂钓时光', '完成专注后，钓起一条小鱼'],
+  'duoAlt': 'iPhone Duo 横屏画面：瀑布前的湖面与垂钓小舟',
+  'journalDuo': ('查看 iPhone Duo 画面', '返回普通 iPhone 画面', 'iPhone Duo 横屏上的别境：湖畔垂钓与中文灵感及待办面板'),
+  'duoLabel': '查看 iPhone Duo 屏幕',
+  'soloLabel': '返回普通 iPhone 屏幕',
   'lakeAlt': '蓝天下，湖水倒映着云朵与山峦',
   'heroAlt': '别境中文首页：秘境飞瀑、专注时长与开始专注',
   'collectionAlt': '原版应用商店画面：鱼类、宝藏收藏与个人池塘',
@@ -31,6 +35,10 @@ TEXT = {
   'closing': 'Focus for a little while. Let the water take care of the rest.',
   'closingText': '',
   'alts': ['Focus setup: duration, intention, and sound controls', 'An active focus session fishing beneath a rainbow', 'Discovering a fish after a completed focus session'],
+  'duoAlt': 'Little Elsewhere on iPhone Duo: a fishing boat on a lake by the waterfall',
+  'journalDuo': ('View iPhone Duo screen', 'Back to standard iPhone screen', 'Little Elsewhere on iPhone Duo with the English Inspiration and To-do panel'),
+  'duoLabel': 'View iPhone Duo screen',
+  'soloLabel': 'Back to standard iPhone screen',
   'lakeAlt': 'Clouds and mountains reflected in a bright, peaceful lake',
   'heroAlt': 'Little Elsewhere English home screen: Hidden Falls, focus duration, and Start focus',
   'collectionAlt': 'Original English App Store artwork: fish, treasure collections, and your personal pond',
@@ -40,17 +48,35 @@ TEXT = {
 }
 
 
+def focus_switch(duo_label, solo_label, image_attrs=''):
+    return (f'<button class="focus-switch" type="button" hidden {image_attrs}'
+            f'data-duo-label="{duo_label}" data-solo-label="{solo_label}" '
+            f'aria-pressed="false">{duo_label}</button>')
+
+
 def landing_content(lang, common, image, button):
     t = TEXT[lang]
     suffix = 'cn' if lang == 'zh-CN' else 'en'
     rewards = (Path(__file__).resolve().parent / f'rewards-{suffix}.html').read_text(encoding='utf-8')
     worlds = (Path(__file__).resolve().parent / f'worlds-{suffix}.html').read_text(encoding='utf-8')
     journal = (Path(__file__).resolve().parent / f'journal-{suffix}.html').read_text(encoding='utf-8')
+    duo_label, solo_label, duo_alt = t['journalDuo']
+    journal_duo = (f'<img class="journal-duo" data-duo-preview hidden '
+                   f'src="/assets/little-elsewhere/journal/duo-{suffix}.webp" '
+                   f'width="1204" height="875" alt="{duo_alt}" loading="lazy" decoding="async">\n'
+                   f'      {focus_switch(duo_label, solo_label)}')
+    journal = journal.replace('<!-- journal-duo-preview -->', journal_duo)
     def phone(slug, alt):
         return f'<div class="device">{image(slug, alt, cls="device-screen")}</div>'
     headline = t['title'].replace('变成', '变成<br>') if lang == 'zh-CN' else t['title'].replace('focus. ', 'focus.<br> ')
     slugs = ['pre-'+suffix, 'focus-session-rainbow', 'fish-'+suffix]
-    steps = ''.join(f'<li class="journey-step"><figure>{phone(slugs[i], t["alts"][i]) if i != 1 else image(slugs[i], t["alts"][i], cls="landscape-screen")}<figcaption><h3><span class="step-number">{i+1}</span>{heading}</h3><p>{description}</p></figcaption></figure></li>' for i,(heading,description) in enumerate(t['steps']))
+    focus_duo_attrs = ('data-duo-src="/assets/little-elsewhere/redesign/duo-focus.webp" '
+                       'data-duo-width="1323" data-duo-height="908" '
+                       f'data-duo-alt="{t["duoAlt"]}" ')
+    focus_preview = (f'<div class="focus-preview">'
+                     f'{image(slugs[1], t["alts"][1], cls="landscape-screen focus-preview-image")}'
+                     f'{focus_switch(t["duoLabel"], t["soloLabel"], focus_duo_attrs)}</div>')
+    steps = ''.join(f'<li class="journey-step"><figure>{phone(slugs[i], t["alts"][i]) if i != 1 else focus_preview}<figcaption><h3><span class="step-number">{i+1}</span>{heading}</h3><p>{description}</p></figcaption></figure></li>' for i,(heading,description) in enumerate(t['steps']))
     return f'''<main id="main">
   <section class="arrival" aria-labelledby="arrival-title">
     <div class="arrival-inner content">
@@ -72,6 +98,15 @@ def landing_content(lang, common, image, button):
     {rewards}
   </section>
   <section class="journal-scene" aria-labelledby="journal-record-title journal-notes-title">
+    <svg class="journal-color-filters" width="0" height="0" aria-hidden="true">
+      <filter id="journal-lake-color" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="
+          1.4168 -.3640 -.0418 0 -.0366
+          .0452 1.0009 .0196 0 -.0074
+          .0204 .0321 1.0080 0 .0007
+          0 0 0 1 0"/>
+      </filter>
+    </svg>
     {journal}
   </section>
   <section class="worlds-scene" aria-labelledby="worlds-music-title worlds-map-title">
