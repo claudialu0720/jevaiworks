@@ -57,6 +57,10 @@ def focus_switch(duo_label, solo_label, image_attrs=''):
 def landing_content(lang, common, image, button):
     t = TEXT[lang]
     suffix = 'cn' if lang == 'zh-CN' else 'en'
+    contact_title, contact_copy, rednote_label = (
+        ('联系我们', '有问题或想聊聊？欢迎发邮件给我们。', '小红书') if lang == 'zh-CN'
+        else ('Get in touch', "Questions or ideas? We'd love to hear from you.", 'Rednote')
+    )
     rewards = (Path(__file__).resolve().parent / f'rewards-{suffix}.html').read_text(encoding='utf-8')
     worlds = (Path(__file__).resolve().parent / f'worlds-{suffix}.html').read_text(encoding='utf-8')
     journal = (Path(__file__).resolve().parent / f'journal-{suffix}.html').read_text(encoding='utf-8')
@@ -85,6 +89,7 @@ def landing_content(lang, common, image, button):
         <p class="description">{t['description']}</p>
         <p class="support">{t['support']}</p>
         {button(common)}
+        <nav class="social-links" aria-label="Social media"><a href="https://www.instagram.com/little_elsewhere_app/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><span class="social-icon instagram-icon"><img src="/assets/little-elsewhere/instagram-logo.png" alt="" width="568" height="530"></span></a><a href="https://www.xiaohongshu.com/user/profile/6518184900000000230270c7" target="_blank" rel="noopener noreferrer" aria-label="{rednote_label}"><span class="social-icon rednote-icon"><img src="/assets/little-elsewhere/rednote-logo.png" alt="" width="592" height="538"></span></a></nav>
       </div>
     </div>
     <figure class="hero-interface">{image('home-'+suffix, t['heroAlt'], False, 'landscape-screen')}</figure>
@@ -119,4 +124,5 @@ def landing_content(lang, common, image, button):
       {button(common)}
     </div>
   </section>
+  <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="content"><h2 id="contact-title">{contact_title}</h2><p>{contact_copy}</p><a class="contact-email" href="mailto:hello@jevaiworks.com">hello@jevaiworks.com</a></div></section>
 </main>'''

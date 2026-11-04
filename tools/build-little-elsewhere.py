@@ -54,11 +54,23 @@ def shell(lang,body,kind='',description=None):
     theme_color = '#f1f9fc' if not kind else '#f4fbff'
     landing_css = f'<link rel="stylesheet" href="{BASE}landing-v4.css">' if not kind else ''
     body_class = ' class="landing-page"' if not kind else ' class="legal-page"'
+    if kind:
+        nav_links = f'<a class="explore" href="{route(lang)}#explore">{c["explore"]}</a>'
+        nav_cta = button(c)
+        footer_contact = 'mailto:hello@jevaiworks.com'
+        website_privacy = '网站隐私' if lang == 'zh-CN' else 'Website privacy'
+    else:
+        privacy_label = '隐私政策' if lang == 'zh-CN' else 'Privacy'
+        nav_links = f'<a href="{route(lang,"privacy")}/">{privacy_label}</a><a href="#contact">{c["contact"]}</a>'
+        nav_cta = ''
+        footer_contact = '#contact'
+        website_privacy = '网站隐私政策' if lang == 'zh-CN' else 'Jevai Works Privacy'
+    copyright_name = 'Jevai Works' if lang == 'en' and not kind else '界外造物创意科技（青岛）有限公司'
     return f'''<!doctype html>
 <html lang="{lang}"><head><meta charset="utf-8">{GOOGLE_TAG}<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="{theme_color}"><title>{escape(title)}</title><meta name="description" content="{escape(description)}"><link rel="canonical" href="{ORIGIN+url}"><link rel="alternate" hreflang="zh-CN" href="{ORIGIN+route('zh-CN',kind)}"><link rel="alternate" hreflang="en" href="{ORIGIN+route('en',kind)}"><link rel="alternate" hreflang="x-default" href="{ORIGIN+route('zh-CN',kind)}"><meta property="og:title" content="{escape(title)}"><meta property="og:description" content="{escape(description)}"><meta property="og:type" content="website"><meta property="og:url" content="{ORIGIN+url}"><meta property="og:locale" content="{'zh_CN' if lang=='zh-CN' else 'en_US'}"><meta property="og:image" content="{ORIGIN+ASSET}lake.webp"><meta property="og:image:alt" content="{'别境湖畔风景' if lang=='zh-CN' else 'A peaceful lake in Little Elsewhere'}"><link rel="icon" href="{ASSET}icon.webp"><link rel="stylesheet" href="{BASE}product.css"><script defer src="{BASE}product.js"></script>{landing_css}</head><body{body_class}>
-<a class="skip" href="#main">{c['skip']}</a><header class="header wrap"><a class="brand" href="{route(lang)}"><img src="{ASSET}icon.webp" width="42" height="42" alt=""><span>{c['name']}</span></a><nav aria-label="{'主导航' if lang=='zh-CN' else 'Main navigation'}"><a class="explore" href="{route(lang)}#explore">{c['explore']}</a><div class="languages" role="group" aria-label="{'语言' if lang=='zh-CN' else 'Language'}">{langs}</div>{button(c)}</nav></header>
+<a class="skip" href="#main">{c['skip']}</a><header class="header wrap"><a class="brand" href="{route(lang)}"><img src="{ASSET}icon.webp" width="42" height="42" alt=""><span>{c['name']}</span></a><nav aria-label="{'主导航' if lang=='zh-CN' else 'Main navigation'}">{nav_links}<div class="languages" role="group" aria-label="{'语言' if lang=='zh-CN' else 'Language'}">{langs}</div>{nav_cta}</nav></header>
 {body}
-<footer class="footer wrap"><div class="footer-top"><a href="{route(lang)}">Little Elsewhere</a><nav aria-label="{'页脚导航' if lang=='zh-CN' else 'Footer navigation'}"><a href="{route(lang,'privacy')}">{c['privacy']}</a><a href="{route(lang,'terms')}">{c['terms']}</a><a href="/privacy/">{'网站隐私' if lang=='zh-CN' else 'Website privacy'}</a><a href="mailto:hello@jevaiworks.com">{c['contact']}</a></nav></div><div class="footer-bottom"><a class="footer-credit" href="/">{c['credit']}</a><p>© 2026 界外造物创意科技（青岛）有限公司</p></div></footer></body></html>'''
+<footer class="footer wrap"><div class="footer-top"><a href="{route(lang)}">Little Elsewhere</a><nav aria-label="{'页脚导航' if lang=='zh-CN' else 'Footer navigation'}"><a href="{route(lang,'privacy')}">{c['privacy']}</a><a href="{route(lang,'terms')}">{c['terms']}</a><a href="/privacy/">{website_privacy}</a><a href="{footer_contact}">{c['contact']}</a></nav></div><div class="footer-bottom"><a class="footer-credit" href="/">{c['credit']}</a><p>© 2026 {copyright_name}</p></div></footer></body></html>'''
 
 def landing(lang):
     body = '\n'.join(line.rstrip() for line in landing_content(lang, COPY[lang], image, button).splitlines())
@@ -69,7 +81,7 @@ def landing(lang):
 def inline(s):
     s=escape(s)
     s=re.sub(r'\*\*(.+?)\*\*',r'<strong>\1</strong>',s)
-    s=re.sub(r'https?://[^\s<|]+',lambda m:f'<a href="{m[0]}">{m[0]}</a>',s)
+    s=re.sub(r'\[([^\]]+)\]\((https?://[^\s<|)]+)\)|(https?://[^\s<|]+)',lambda m:f'<a href="{m[2] or m[3]}">{m[1] or m[3]}</a>',s)
     return s
 
 def markdown(source):
@@ -107,8 +119,13 @@ def generate():
                 source=(ROOT/'little-elsewhere/legal-source'/filename).read_text(encoding='utf-8')
                 content=f'<aside class="notice">{c["notice"]}</aside><article data-legal-source="{filename}">{markdown(source)}</article>'
             else:
-                content=f'''<h1>{c[kind]}</h1><aside class="notice">The authoritative-language V2 document is currently available in Chinese. It is a revision draft, with its effective date and review items still pending. An approved English version is not yet available.</aside><p>Please refer to the complete Chinese document. English translation drafts are being held for human and legal review and are not published here as authoritative agreements.</p><a class="button" href="{route('zh-CN',kind)}" lang="zh-CN">阅读中文原文 <span aria-hidden="true">↗</span></a>'''
-            body=f'<main id="main" class="legal wrap {"fallback" if lang=="en" else ""}"><a class="back" href="{route(lang)}">{c["back"]}</a>{content}</main>'
+                filename = f'{kind}.en.md'
+                source = (ROOT/'little-elsewhere/legal-source'/filename).read_text(encoding='utf-8-sig')
+                source = source.replace('[Insert the actual publication date]', 'To be announced')
+                content = (f'<aside class="notice">English translation for review. The effective date is to be announced. '
+                           f'<a href="{route("zh-CN",kind)}/" lang="zh-CN">阅读中文原文</a></aside>'
+                           f'<article data-legal-source="{filename}">{markdown(source)}</article>')
+            body=f'<main id="main" class="legal wrap "><a class="back" href="{route(lang)}">{c["back"]}</a>{content}</main>'
             p=ROOT/route(lang,kind).strip('/'); p.mkdir(parents=True,exist_ok=True)
-            (p/'index.html').write_text(shell(lang,body,kind,('别境 '+c[kind]+' V2 原文（修订草稿）。' if lang=='zh-CN' else c[kind]+' for Little Elsewhere. Chinese V2 document and translation status.')),encoding='utf-8')
+            (p/'index.html').write_text(shell(lang,body,kind,('别境 '+c[kind]+' V2 原文（修订草稿）。' if lang=='zh-CN' else c[kind]+' for Little Elsewhere. English translation for review.')),encoding='utf-8')
 if __name__=='__main__': generate()

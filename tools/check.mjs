@@ -9,7 +9,8 @@ let references = 0;
 for (const page of pages) {
   const source = fs.readFileSync(path.join(root,page),'utf8');
   if ((source.match(/<h1[\s>]/g)||[]).length !== 1) errors.push(`${page}: expected one h1`);
-  if (!source.includes('界外造物创意科技（青岛）有限公司')) errors.push(`${page}: missing company name`);
+  const companyName = page === 'little-elsewhere/en/index.html' ? '© 2026 Jevai Works' : '界外造物创意科技（青岛）有限公司';
+  if (!source.includes(companyName)) errors.push(`${page}: missing company name`);
   for (const match of source.matchAll(/(?:href|src)="([^"]+)"/g)) {
     const ref = match[1];
     if (/^(https?:|mailto:|data:)/.test(ref)) continue;
