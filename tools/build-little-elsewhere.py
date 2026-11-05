@@ -1,5 +1,5 @@
 """Generate only Little Elsewhere's six static pages. Run from any directory.
-No runtime dependencies. Legal renderer covers the Markdown used by the V2 sources.
+No runtime dependencies. Legal renderer covers the Markdown used by the V3.2 sources.
 """
 from pathlib import Path
 from html import escape
@@ -33,7 +33,7 @@ GOOGLE_TAG = '''
 </script>
 '''
 COPY = {
-'zh-CN': dict(name='别境', explore='探索别境', cta='加入 iOS 内测', title='专注一会儿，<br>去湖边钓条鱼。', desc='一款把专注变成钓鱼时光的温柔计时器。', support='设定时间，让风景与声音陪你专注。<br>完成之后，钓起一份属于自己的小惊喜。', status='iOS 内测 · 通过 TestFlight', caption='把喧嚣留在岸上。', caption2='湖水、小舟，和属于你的时间。', how='一段专注，<br>三点小小的快乐。', howdesc='不用急着做更多。<br>从给眼前的事留一点时间开始。', steps=[('设定专注时间','选好时长，写下此刻想做的事。'),('沉浸湖畔时光','让小舟停在水面，让思绪回到眼前。'),('钓起意外惊喜','完成专注，看看这次遇见了谁。')], world='一点风景，<br>一点声音，<br>一点发现。', worlddesc='在瀑布边听水声，在月光下坐一会儿。换一处风景，也给日常换一种心情。', rainbow='雨过天晴，等一道彩虹。', moon='夜深了，还有月亮作伴。', more='不止是计时，<br>也是自己的小天地。', moredesc='让每次专注，都多一点值得期待的事。', features=[('听见喜欢的安静','背景音乐与自然环境音，陪你慢慢进入状态。'),('留下小小的收获','收集遇见的鱼和物品，记住一段湖畔时光。')], final='给自己一小段别处的时间。', faq='如何加入内测？', instructions='在 iPhone 上安装 Apple 的 <a href="https://apps.apple.com/app/testflight/id899247664">TestFlight</a>，再打开本页的内测邀请，在 TestFlight 中接受邀请并安装别境。', help='若暂时无法加入，请查看邀请页的名额和设备要求。可通过 TestFlight 发送 Beta 版反馈，或联系 <a href="mailto:hello@jevaiworks.com">hello@jevaiworks.com</a>。', privacy='隐私政策', terms='用户服务协议', contact='联系', credit='界外造物出品', back='← 返回别境', skip='跳至主要内容', notice='原文状态：修订草稿，尚未正式生效。以下完整保留所提供的 V2 文档，包括待确认事项与生效日期占位；正式发布前需完成核对。'),
+'zh-CN': dict(name='别境', explore='探索别境', cta='加入 iOS 内测', title='专注一会儿，<br>去湖边钓条鱼。', desc='一款把专注变成钓鱼时光的温柔计时器。', support='设定时间，让风景与声音陪你专注。<br>完成之后，钓起一份属于自己的小惊喜。', status='iOS 内测 · 通过 TestFlight', caption='把喧嚣留在岸上。', caption2='湖水、小舟，和属于你的时间。', how='一段专注，<br>三点小小的快乐。', howdesc='不用急着做更多。<br>从给眼前的事留一点时间开始。', steps=[('设定专注时间','选好时长，写下此刻想做的事。'),('沉浸湖畔时光','让小舟停在水面，让思绪回到眼前。'),('钓起意外惊喜','完成专注，看看这次遇见了谁。')], world='一点风景，<br>一点声音，<br>一点发现。', worlddesc='在瀑布边听水声，在月光下坐一会儿。换一处风景，也给日常换一种心情。', rainbow='雨过天晴，等一道彩虹。', moon='夜深了，还有月亮作伴。', more='不止是计时，<br>也是自己的小天地。', moredesc='让每次专注，都多一点值得期待的事。', features=[('听见喜欢的安静','背景音乐与自然环境音，陪你慢慢进入状态。'),('留下小小的收获','收集遇见的鱼和物品，记住一段湖畔时光。')], final='给自己一小段别处的时间。', faq='如何加入内测？', instructions='在 iPhone 上安装 Apple 的 <a href="https://apps.apple.com/app/testflight/id899247664">TestFlight</a>，再打开本页的内测邀请，在 TestFlight 中接受邀请并安装别境。', help='若暂时无法加入，请查看邀请页的名额和设备要求。可通过 TestFlight 发送 Beta 版反馈，或联系 <a href="mailto:hello@jevaiworks.com">hello@jevaiworks.com</a>。', privacy='隐私政策', terms='用户服务协议', contact='联系', credit='界外造物出品', back='← 返回别境', skip='跳至主要内容'),
 'en': dict(name='Little Elsewhere', explore='Explore', cta='Join the iOS Beta', title='A little focus.<br>A little fishing.', desc='A cozy focus timer that turns quiet moments into little discoveries.', support='Set a timer, settle by the water,<br>and see what you catch along the way.', status='iOS beta · via TestFlight', caption='Leave the noise on the shore.', caption2='A lake, a little boat, a moment for yourself.', how='A little time.<br>Three little joys.', howdesc='Make a little room for the thing in front of you. The lake will keep you company.', steps=[('Set a focus timer','Choose a little time for what matters to you.'),('Focus by the water','Let the scenery and sounds help you settle in.'),('Catch little surprises','Finish your session. See who comes along.')], world='A little scenery.<br>A little sound.<br>A little discovery.', worlddesc='Listen to a waterfall. Sit beneath the moon. A change of scenery for an ordinary day.', rainbow='A little rainbow after the rain.', moon='A quiet evening, with the moon for company.', more='More than a timer.<br>A little world of your own.', moredesc='Something to look forward to, each time you focus.', features=[('Find your quiet','Gentle music and natural ambience help you ease into the moment.'),('Keep a little discovery','Collect fish and little finds to remember your time by the water.')], final='Find your little elsewhere.', faq='How do I join the beta?', instructions='On your iPhone, install Apple’s <a href="https://apps.apple.com/app/testflight/id899247664">TestFlight</a>, then open the beta invitation on this page. Accept the invitation and install Little Elsewhere in TestFlight.', help='If you can’t join, check availability and device requirements on the invitation page. Send Beta Feedback through TestFlight or email <a href="mailto:hello@jevaiworks.com">hello@jevaiworks.com</a>.', privacy='Privacy Policy', terms='Terms of Service', contact='Contact', credit='A Jevai Works creation', back='← Back to Little Elsewhere', skip='Skip to content')}
 
 def image(slug,alt,lazy=True,cls=''):
@@ -84,7 +84,7 @@ def inline(s):
     s=re.sub(r'\[([^\]]+)\]\((https?://[^\s<|)]+)\)|(https?://[^\s<|]+)',lambda m:f'<a href="{m[2] or m[3]}">{m[1] or m[3]}</a>',s)
     return s
 
-def markdown(source):
+def markdown(source, lang='zh-CN'):
     lines=source.splitlines(); out=[]; i=0
     while i<len(lines):
         s=lines[i]
@@ -97,7 +97,8 @@ def markdown(source):
                 cells=lines[i].strip('|').split('|'); i+=1
                 if all(re.fullmatch(r'[:\- ]+',x) for x in cells): continue
                 tag='th' if not rows else 'td'; rows.append('<tr>'+''.join(f'<{tag}>{inline(x.strip())}</{tag}>' for x in cells)+'</tr>')
-            out.append('<div class="table-scroll" tabindex="0" role="region" aria-label="第三方 SDK 信息"><table><thead>'+rows[0]+'</thead><tbody>'+''.join(rows[1:])+'</tbody></table></div>')
+            label = '政策信息表' if lang == 'zh-CN' else 'Policy information table'
+            out.append(f'<div class="table-scroll" tabindex="0" role="region" aria-label="{label}"><table><thead>'+rows[0]+'</thead><tbody>'+''.join(rows[1:])+'</tbody></table></div>')
         elif re.match(r'(- |\d+\. )',s):
             ordered=s[0].isdigit(); tag='ol' if ordered else 'ul'; items=[]
             while i<len(lines) and re.match(r'(- |\d+\. )',lines[i]):
@@ -110,22 +111,34 @@ def markdown(source):
             out.append('<p>'+''.join(parts)+'</p>')
     return '\n'.join(out)
 
+LEGAL_SOURCES = {
+    'zh-CN': {
+        'privacy': 'Little_Elsewhere_隐私政策_V3.2_2026-11-05.md',
+        'terms': 'Little_Elsewhere_用户服务协议_V3.2_2026-11-05.md',
+    },
+    'en': {
+        'privacy': 'Little_Elsewhere_Privacy_Policy_EN_V3.2_2026-11-05.md',
+        'terms': 'Little_Elsewhere_Terms_of_Use_EN_V3.2_2026-11-05.md',
+    },
+}
+
+
 def generate():
     for lang in COPY:
         folder=ROOT/route(lang).strip('/'); folder.mkdir(parents=True,exist_ok=True); (folder/'index.html').write_text(landing(lang),encoding='utf-8')
-        for kind,filename in [('privacy','Little_Elsewhere_隐私政策_V2.md'),('terms','Little_Elsewhere_用户服务协议_V2.md')]:
+        for kind,filename in LEGAL_SOURCES[lang].items():
             c=COPY[lang]
+            source=(ROOT/'little-elsewhere/legal-source'/filename).read_text(encoding='utf-8-sig')
             if lang=='zh-CN':
-                source=(ROOT/'little-elsewhere/legal-source'/filename).read_text(encoding='utf-8')
-                content=f'<aside class="notice">{c["notice"]}</aside><article data-legal-source="{filename}">{markdown(source)}</article>'
+                notice='V3.2 · 代码核查后的待发布草稿。生效日期及原文中的待确认事项尚未填写或核实，以下按所提供文档完整展示。'
+                description='别境 '+c[kind]+' V3.2（待发布草稿）。'
             else:
-                filename = f'{kind}.en.md'
-                source = (ROOT/'little-elsewhere/legal-source'/filename).read_text(encoding='utf-8-sig')
-                source = source.replace('[Insert the actual publication date]', 'To be announced')
-                content = (f'<aside class="notice">English translation for review. The effective date is to be announced. '
-                           f'<a href="{route("zh-CN",kind)}/" lang="zh-CN">阅读中文原文</a></aside>'
-                           f'<article data-legal-source="{filename}">{markdown(source)}</article>')
+                notice=('V3.2 · Draft aligned to source-code review. The effective date and pending confirmations '
+                        'remain as provided in the source document. '
+                        f'<a href="{route("zh-CN",kind)}/" lang="zh-CN">阅读中文原文</a>')
+                description=c[kind]+' for Little Elsewhere. V3.2 draft aligned to source-code review.'
+            content=f'<aside class="notice">{notice}</aside><article data-legal-source="{filename}">{markdown(source, lang)}</article>'
             body=f'<main id="main" class="legal wrap "><a class="back" href="{route(lang)}">{c["back"]}</a>{content}</main>'
             p=ROOT/route(lang,kind).strip('/'); p.mkdir(parents=True,exist_ok=True)
-            (p/'index.html').write_text(shell(lang,body,kind,('别境 '+c[kind]+' V2 原文（修订草稿）。' if lang=='zh-CN' else c[kind]+' for Little Elsewhere. English translation for review.')),encoding='utf-8')
+            (p/'index.html').write_text(shell(lang,body,kind,description),encoding='utf-8')
 if __name__=='__main__': generate()

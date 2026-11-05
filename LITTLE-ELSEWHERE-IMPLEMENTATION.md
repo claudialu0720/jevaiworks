@@ -1,3 +1,5 @@
+> 2026-11-05：App 中英文法律页面已替换为 V3.2 原文；当前维护与来源说明见 [法律来源说明](little-elsewhere/legal-source/README.md)。下文 V2 状态及待审记录为历史说明。
+
 > 2026-11-02 V3 已更新营销视觉与维护入口，请以 [V3 改版说明](LITTLE-ELSEWHERE-V3.md) 为准；下文法律审阅事项继续适用。
 
 # Little Elsewhere 改版交付与审阅说明

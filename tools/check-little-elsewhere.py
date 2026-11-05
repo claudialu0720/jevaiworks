@@ -9,9 +9,15 @@ ROOT=Path(__file__).resolve().parents[1]
 class Text(HTMLParser):
     def __init__(self): super().__init__(); self.text=[]
     def handle_data(self,data): self.text.append(data)
-for kind,name in [('privacy','Little_Elsewhere_隐私政策_V2.md'),('terms','Little_Elsewhere_用户服务协议_V2.md')]:
+for route,name in [
+    ('privacy','Little_Elsewhere_隐私政策_V3.2_2026-11-05.md'),
+    ('terms','Little_Elsewhere_用户服务协议_V3.2_2026-11-05.md'),
+    ('en/privacy','Little_Elsewhere_Privacy_Policy_EN_V3.2_2026-11-05.md'),
+    ('en/terms','Little_Elsewhere_Terms_of_Use_EN_V3.2_2026-11-05.md'),
+]:
     source=(ROOT/'little-elsewhere/legal-source'/name).read_text(encoding='utf-8')
-    page=(ROOT/'little-elsewhere'/kind/'index.html').read_text(encoding='utf-8')
+    page=(ROOT/'little-elsewhere'/route/'index.html').read_text(encoding='utf-8')
+    assert f'data-legal-source="{name}"' in page, f'{route}: wrong source'
     article=page.split('<article data-legal-source=')[1].split('>',1)[1].split('</article>')[0]
     parser=Text(); parser.feed(article)
     rendered=re.sub(r'\s+','',''.join(parser.text))
@@ -19,10 +25,16 @@ for kind,name in [('privacy','Little_Elsewhere_隐私政策_V2.md'),('terms','Li
     for line in source.splitlines():
         if re.fullmatch(r'\|[-| ]+\|',line): continue
         line=re.sub(r'^(#{1,6} |\d+\. |- )','',line).replace('**','')
+        line=re.sub(r'\[([^\]]+)\]\(https?://[^\s)]+\)',r'\1',line)
         if line.startswith('|'): line=line.replace('|','')
         expected.append(line)
-    assert rendered==re.sub(r'\s+','',''.join(expected)), f'{kind}: legal wording changed'
-    print('PASS complete legal wording:',kind)
+    assert rendered==re.sub(r'\s+','',''.join(expected)), f'{route}: legal wording changed'
+    for url in re.findall(r'\[[^\]]+\]\((https?://[^\s)]+)\)',source):
+        assert f'href="{url}"' in article, f'{route}: missing legal link {url}'
+    assert article.count('<strong>') == source.count('**') // 2, f'{route}: missing emphasis'
+    assert article.count('<h2>') == len(re.findall(r'^## ',source,re.M)), f'{route}: missing section'
+    assert 'V3.2' in page and ('待发布草稿' in page if not route.startswith('en/') else 'Draft aligned' in page)
+    print('PASS complete legal wording, links, emphasis and sections:',route)
 for route in ['','en/','privacy','terms','en/privacy','en/terms']:
     url='http://127.0.0.1:4173/little-elsewhere/'+route
     for attempt in range(2):
