@@ -1,6 +1,6 @@
 /* Self-hosted, licensed fonts. Rebuild subsets with tools/build-little-elsewhere-fonts.py. */
-@font-face {font-family:"LXGW WenKai TC";font-style:normal;font-weight:400;font-display:swap;src:url('/assets/little-elsewhere/fonts/lxgw-wenkai-tc-regular.woff2') format('woff2')}
-@font-face {font-family:"LXGW WenKai TC";font-style:normal;font-weight:700;font-display:swap;src:url('/assets/little-elsewhere/fonts/lxgw-wenkai-tc-bold.woff2') format('woff2')}
+@font-face {font-family:"LXGW WenKai TC";font-style:normal;font-weight:400;font-display:swap;src:url('/assets/little-elsewhere/fonts/lxgw-wenkai-tc-regular.woff2?v=2') format('woff2')}
+@font-face {font-family:"LXGW WenKai TC";font-style:normal;font-weight:700;font-display:swap;src:url('/assets/little-elsewhere/fonts/lxgw-wenkai-tc-bold.woff2?v=2') format('woff2')}
 @font-face {font-family:"Fredoka";font-style:normal;font-weight:400;font-display:swap;src:url('/assets/little-elsewhere/fonts/fredoka-regular.woff2') format('woff2')}
 @font-face {font-family:"Fredoka";font-style:normal;font-weight:500;font-display:swap;src:url('/assets/little-elsewhere/fonts/fredoka-medium.woff2') format('woff2')}
 /* V4: compact editorial compositions; scoped away from legal pages. */

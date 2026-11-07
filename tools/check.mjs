@@ -14,7 +14,8 @@ for (const page of pages) {
   for (const match of source.matchAll(/(?:href|src)="([^"]+)"/g)) {
     const ref = match[1];
     if (/^(https?:|mailto:|data:)/.test(ref)) continue;
-    const [pathname,fragment] = ref.split('#');
+    const [pathWithQuery,fragment] = ref.split('#');
+    const [pathname] = pathWithQuery.split('?');
     let target = pathname ? (pathname.startsWith('/') ? path.join(root,pathname) : path.resolve(root,path.dirname(page),pathname)) : path.join(root,page);
     if (fs.existsSync(target) && fs.statSync(target).isDirectory()) target = path.join(target,'index.html');
     references++;

@@ -54,7 +54,7 @@ def shell(lang,body,kind='',description=None):
     description=description or c['desc']; url=route(lang,kind)
     langs=''.join(f'<a href="{route(l,kind)}" lang="{l}" hreflang="{l}"'+(' aria-current="page"' if l==lang else '')+f'>{label}</a>'+('<span aria-hidden="true">/</span>' if l=='zh-CN' else '') for l,label in [('zh-CN','中'),('en','EN')])
     theme_color = '#f1f9fc' if not kind else '#f4fbff'
-    landing_css = f'<link rel="stylesheet" href="{BASE}landing-v4.css">' if not kind else ''
+    landing_css = f'<link rel="stylesheet" href="{BASE}landing-v4.css?v=2">' if not kind else ''
     body_class = ' class="landing-page"' if not kind else ' class="legal-page"'
     if kind:
         nav_links = f'<a class="explore" href="{route(lang)}#explore">{c["explore"]}</a>'
