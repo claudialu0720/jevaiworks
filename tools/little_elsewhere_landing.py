@@ -24,11 +24,12 @@ TEXT = {
   'mapAlt': '探索不同环境的地图界面',
  },
  'en': {
-  'title': 'A little focus. A little fishing.',
-  'description': 'A cozy Pomodoro timer with soothing sounds<br>and little discoveries.',
-  'support': 'Set a timer, settle by the water, and focus on what matters.',
+  'title': 'A little focus. A little fishing. A little elsewhere.',
+  'seoTitle': 'Little Elsewhere | A Cozy Focus Timer',
+  'description': 'Little Elsewhere is a cozy focus timer that turns study, work, and meditation into peaceful fishing trips.',
+  'support': 'Find your favorite spot by the water, set a timer, and focus at your own pace. No racing against the clock. No pressure to be perfect.',
   'how': 'A little surprise after every session.',
-  'steps': [('Set your timer', 'Choose a little time to study, work, or read.'), ('Settle by the water', 'Let gentle music and nature sounds keep you company.'), ("See what you've caught", 'A fish, a treasure, or something unexpected.')],
+  'steps': [('Set your timer', "Choose a focus duration that works for you, whether you're studying, working, reading, or just getting started."), ('Settle by the water', 'Let gentle animations, relaxing music, and soothing nature sounds keep you company.'), ("See what you've caught", 'Complete your session and discover a fish, a curious little treasure, or a rare surprise.')],
   'discover': 'Little discoveries, lasting memories.',
   'discoverText': 'Collect fish and treasures, fill your personal pond, and explore peaceful worlds at your own pace.',
   'labels': ['Collect your catches', 'Peaceful soundscapes', 'More worlds to explore'],
@@ -59,7 +60,7 @@ def landing_content(lang, common, image, button):
     suffix = 'cn' if lang == 'zh-CN' else 'en'
     contact_title, contact_copy, rednote_label = (
         ('联系我们', '有问题或想聊聊？欢迎发邮件给我们。', '小红书') if lang == 'zh-CN'
-        else ('Get in touch', "Questions or ideas? We'd love to hear from you.", 'Rednote')
+        else ('Get in touch', "Questions, ideas, or just a little hello? We'd love to hear from you.", 'Rednote')
     )
     rewards = (Path(__file__).resolve().parent / f'rewards-{suffix}.html').read_text(encoding='utf-8')
     worlds = (Path(__file__).resolve().parent / f'worlds-{suffix}.html').read_text(encoding='utf-8')
@@ -72,7 +73,7 @@ def landing_content(lang, common, image, button):
     journal = journal.replace('<!-- journal-duo-preview -->', journal_duo)
     def phone(slug, alt):
         return f'<div class="device">{image(slug, alt, cls="device-screen")}</div>'
-    headline = t['title'].replace('变成', '变成<br>') if lang == 'zh-CN' else t['title'].replace('focus. ', 'focus.<br> ')
+    headline = t['title'].replace('变成', '变成<br>') if lang == 'zh-CN' else t['title'].replace('. ', '.<br> ')
     slugs = ['pre-'+suffix, 'focus-session-rainbow', 'fish-'+suffix]
     focus_duo_attrs = ('data-duo-src="/assets/little-elsewhere/redesign/duo-focus.webp" '
                        'data-duo-width="1323" data-duo-height="908" '
