@@ -35,7 +35,7 @@ for route,name in [
     assert article.count('<h2>') == len(re.findall(r'^## ',source,re.M)), f'{route}: missing section'
     assert 'V3.2' in page and ('待发布草稿' in page if not route.startswith('en/') else 'Draft aligned' in page)
     print('PASS complete legal wording, links, emphasis and sections:',route)
-for route in ['','en/','privacy','terms','en/privacy','en/terms']:
+for route in ['','en/','privacy','terms','en/privacy','en/terms','support/','en/support/']:
     url='http://127.0.0.1:4173/little-elsewhere/'+route
     for attempt in range(2):
         with build_opener(ProxyHandler({})).open(url, timeout=10) as res:

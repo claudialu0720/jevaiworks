@@ -1,4 +1,4 @@
-"""Generate only Little Elsewhere's six static pages. Run from any directory.
+"""Generate Little Elsewhere's static pages. Run from any directory.
 No runtime dependencies. Legal renderer covers the Markdown used by the V3.2 sources.
 """
 from pathlib import Path
@@ -7,6 +7,7 @@ import re
 import sys
 sys.dont_write_bytecode = True
 from little_elsewhere_landing import landing_content, TEXT
+from little_elsewhere_support import SUPPORT, support_content
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = '/little-elsewhere/'
@@ -45,10 +46,11 @@ def image(slug,alt,lazy=True,cls=''):
     return f'<img class="{cls}" src="{ASSET}{slug}.webp"{responsive} width="{w}" height="{h}" alt="{escape(alt)}" '+('loading="lazy" decoding="async"' if lazy else 'fetchpriority="high"')+'>'
 
 def button(c): return f'<a class="button" href="{BETA}">{c["cta"]}<span aria-hidden="true">↗</span></a>'
-def route(lang,kind=''): return BASE+('en/' if lang=='en' else '')+kind
+def route(lang,kind=''): return BASE+('en/' if lang=='en' else '')+kind+('/' if kind=='support' else '')
 
 def shell(lang,body,kind='',description=None):
-    c=COPY[lang]; title=('Little Elsewhere — '+TEXT[lang]['title']) if not kind else c[kind]+' — Little Elsewhere'
+    c=COPY[lang] | {'support': SUPPORT[lang]['title']}
+    title=('Little Elsewhere — '+TEXT[lang]['title']) if not kind else c[kind]+' — Little Elsewhere'
     description=description or c['desc']; url=route(lang,kind)
     langs=''.join(f'<a href="{route(l,kind)}" lang="{l}" hreflang="{l}"'+(' aria-current="page"' if l==lang else '')+f'>{label}</a>'+('<span aria-hidden="true">/</span>' if l=='zh-CN' else '') for l,label in [('zh-CN','中'),('en','EN')])
     theme_color = '#f1f9fc' if not kind else '#f4fbff'
@@ -57,7 +59,7 @@ def shell(lang,body,kind='',description=None):
     if kind:
         nav_links = f'<a class="explore" href="{route(lang)}#explore">{c["explore"]}</a>'
         nav_cta = button(c)
-        footer_contact = 'mailto:hello@jevaiworks.com'
+        footer_contact = '#contact' if kind == 'support' else 'mailto:hello@jevaiworks.com'
         website_privacy = '网站隐私' if lang == 'zh-CN' else 'Website privacy'
     else:
         privacy_label = '隐私政策' if lang == 'zh-CN' else 'Privacy'
@@ -70,7 +72,7 @@ def shell(lang,body,kind='',description=None):
 <html lang="{lang}"><head><meta charset="utf-8">{GOOGLE_TAG}<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="{theme_color}"><title>{escape(title)}</title><meta name="description" content="{escape(description)}"><link rel="canonical" href="{ORIGIN+url}"><link rel="alternate" hreflang="zh-CN" href="{ORIGIN+route('zh-CN',kind)}"><link rel="alternate" hreflang="en" href="{ORIGIN+route('en',kind)}"><link rel="alternate" hreflang="x-default" href="{ORIGIN+route('zh-CN',kind)}"><meta property="og:title" content="{escape(title)}"><meta property="og:description" content="{escape(description)}"><meta property="og:type" content="website"><meta property="og:url" content="{ORIGIN+url}"><meta property="og:locale" content="{'zh_CN' if lang=='zh-CN' else 'en_US'}"><meta property="og:image" content="{ORIGIN+ASSET}lake.webp"><meta property="og:image:alt" content="{'别境湖畔风景' if lang=='zh-CN' else 'A peaceful lake in Little Elsewhere'}"><link rel="icon" href="{ASSET}icon.webp"><link rel="stylesheet" href="{BASE}product.css"><script defer src="{BASE}product.js"></script>{landing_css}</head><body{body_class}>
 <a class="skip" href="#main">{c['skip']}</a><header class="header wrap"><a class="brand" href="{route(lang)}"><img src="{ASSET}icon.webp" width="42" height="42" alt=""><span>{c['name']}</span></a><nav aria-label="{'主导航' if lang=='zh-CN' else 'Main navigation'}">{nav_links}<div class="languages" role="group" aria-label="{'语言' if lang=='zh-CN' else 'Language'}">{langs}</div>{nav_cta}</nav></header>
 {body}
-<footer class="footer wrap"><div class="footer-top"><a href="{route(lang)}">Little Elsewhere</a><nav aria-label="{'页脚导航' if lang=='zh-CN' else 'Footer navigation'}"><a href="{route(lang,'privacy')}">{c['privacy']}</a><a href="{route(lang,'terms')}">{c['terms']}</a><a href="/privacy/">{website_privacy}</a><a href="{footer_contact}">{c['contact']}</a></nav></div><div class="footer-bottom"><a class="footer-credit" href="/">{c['credit']}</a><p>© 2026 {copyright_name}</p></div></footer></body></html>'''
+<footer class="footer wrap"><div class="footer-top"><a href="{route(lang)}">Little Elsewhere</a><nav aria-label="{'页脚导航' if lang=='zh-CN' else 'Footer navigation'}"><a href="{route(lang,'privacy')}">{c['privacy']}</a><a href="{route(lang,'terms')}">{c['terms']}</a><a href="{route(lang,'support')}"{' aria-current="page"' if kind=='support' else ''}>{c['support']}</a><a href="/privacy/">{website_privacy}</a><a href="{footer_contact}">{c['contact']}</a></nav></div><div class="footer-bottom"><a class="footer-credit" href="/">{c['credit']}</a><p>© 2026 {copyright_name}</p></div></footer></body></html>'''
 
 def landing(lang):
     body = '\n'.join(line.rstrip() for line in landing_content(lang, COPY[lang], image, button).splitlines())
@@ -126,6 +128,10 @@ LEGAL_SOURCES = {
 def generate():
     for lang in COPY:
         folder=ROOT/route(lang).strip('/'); folder.mkdir(parents=True,exist_ok=True); (folder/'index.html').write_text(landing(lang),encoding='utf-8')
+        support_folder=ROOT/route(lang,'support').strip('/')
+        support_folder.mkdir(parents=True,exist_ok=True)
+        support_body=support_content(lang, route(lang), COPY[lang]['back'])
+        (support_folder/'index.html').write_text(shell(lang,support_body,'support',SUPPORT[lang]['intro']),encoding='utf-8')
         for kind,filename in LEGAL_SOURCES[lang].items():
             c=COPY[lang]
             source=(ROOT/'little-elsewhere/legal-source'/filename).read_text(encoding='utf-8-sig')

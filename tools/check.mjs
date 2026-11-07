@@ -3,14 +3,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const pages = ['index.html','little-elsewhere/index.html','privacy/index.html','terms/index.html','404.html','support/index.html','little-elsewhere/en/index.html','little-elsewhere/privacy/index.html','little-elsewhere/terms/index.html','little-elsewhere/en/privacy/index.html','little-elsewhere/en/terms/index.html'];
+const pages = ['index.html','little-elsewhere/index.html','privacy/index.html','terms/index.html','404.html','support/index.html','little-elsewhere/en/index.html','little-elsewhere/privacy/index.html','little-elsewhere/terms/index.html','little-elsewhere/en/privacy/index.html','little-elsewhere/en/terms/index.html','little-elsewhere/support/index.html','little-elsewhere/en/support/index.html'];
 const errors = [];
 let references = 0;
 for (const page of pages) {
   const source = fs.readFileSync(path.join(root,page),'utf8');
   if ((source.match(/<h1[\s>]/g)||[]).length !== 1) errors.push(`${page}: expected one h1`);
   const companyName = page === 'little-elsewhere/en/index.html' ? '© 2026 Jevai Works' : '界外造物创意科技（青岛）有限公司';
-  if (!source.includes(companyName)) errors.push(`${page}: missing company name`);
+  if (page !== 'support/index.html' && !source.includes(companyName)) errors.push(`${page}: missing company name`);
   for (const match of source.matchAll(/(?:href|src)="([^"]+)"/g)) {
     const ref = match[1];
     if (/^(https?:|mailto:|data:)/.test(ref)) continue;

@@ -6,8 +6,8 @@
 
 ## 网站访问统计（2026-11-03）
 
-- 公司官网首页、网站隐私、条款、帮助和 404 页使用 `G-616N96L3W2`（Jevaiworks）。
-- `/little-elsewhere/` 下六个中英文介绍及法律页面使用 `G-212DEYMSND`（Little Elsewhere）。每页只配置一个 ID，避免向两个流重复发送同一页面浏览。
+- 公司官网首页、网站隐私、条款和 404 页使用 `G-616N96L3W2`（Jevaiworks）。
+- `/little-elsewhere/` 下的中英文介绍、法律及支持页面使用 `G-212DEYMSND`（Little Elsewhere）。每页只配置一个 ID，避免向两个流重复发送同一页面浏览。
 - 使用 Google 官方异步 `gtag.js`，自动发送页面浏览；滚动、出站点击等由 GA 后台的增强型衡量设置控制。代码关闭 Google signals 和广告个性化信号。
 - 产品页生成模板同步保留 Google tag，重新生成页面不会丢失统计代码。网站统计说明见 `/privacy/`；App 法律原文不作为网站统计说明。
 - 发布至 GitHub Pages 后，打开正式网址并在 GA 的实时报告或“Test installation”中验证。普通报告可能需要 24–48 小时处理；接入前的访问无法补录。
@@ -28,6 +28,7 @@ node tools/preview.mjs
 
 - `index.html`：首页（关于、领域、产品、联系）。
 - `little-elsewhere/index.html`：别境产品介绍，以六张当前内测截图呈现专注、声景与发现，提供中英双语 iOS TestFlight 安装指南。
+- `/little-elsewhere/support/` 和 `/little-elsewhere/en/support/`：中英文别境帮助页。旧地址 `/support/` 自动跳转到中文帮助页。
 - `little-elsewhere/product.css`：产品页独立配色与响应式图文布局，不影响官网其他页面。
 - `little-elsewhere/product.js`：点击截图打开原生图片预览弹窗，支持关闭按钮、Esc、点击遮罩关闭和焦点返回；关闭 JavaScript 时图片链接仍可访问。
 - `privacy/index.html`：公司官网隐私政策，不是 App 隐私政策。

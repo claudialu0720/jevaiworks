@@ -18,7 +18,7 @@
 ## 维护
 
 - 修改 `tools/build-little-elsewhere.py` 中的 `COPY` 文案、`BETA` 链接和模板，再执行 `python tools/build-little-elsewhere.py`。
-- 构建脚本仅使用 Python 标准库，输出可直接发布的六个静态页面，不需安装依赖。
+- 构建脚本仅使用 Python 标准库，输出可直接发布的八个静态页面，不需安装依赖。帮助页文案位于 `tools/little_elsewhere_support.py`。
 - 产品样式与语言记录逻辑：`little-elsewhere/product.css`、`product.js`。语言由 URL 明确指定，每次访问保存到本地存储，不将中文入口自动跳转为英文。关闭 JS 或拒绝存储时导航仍可用。
 - 法律原文：`little-elsewhere/legal-source/` 中两个原始中文文件（字节一致复制）。取得新的正式原文后替换并重新生成；不要直接修改生成后的 HTML。
 - 英文译稿：同目录 `privacy.en.draft.md` 和 `terms.en.draft.md`，仅供审阅，未接入页面，也不声称具备法律效力。公司法定名称保留中文，未虚构英文登记名称。
