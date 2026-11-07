@@ -50,7 +50,7 @@ def route(lang,kind=''): return BASE+('en/' if lang=='en' else '')+kind+('/' if 
 
 def shell(lang,body,kind='',description=None):
     c=COPY[lang] | {'support': SUPPORT[lang]['title']}
-    title=TEXT[lang].get('seoTitle', 'Little Elsewhere — '+TEXT[lang]['title']) if not kind else c[kind]+' — Little Elsewhere'
+    title=('Little Elsewhere — '+TEXT[lang]['title']) if not kind else c[kind]+' — Little Elsewhere'
     description=description or c['desc']; url=route(lang,kind)
     langs=''.join(f'<a href="{route(l,kind)}" lang="{l}" hreflang="{l}"'+(' aria-current="page"' if l==lang else '')+f'>{label}</a>'+('<span aria-hidden="true">/</span>' if l=='zh-CN' else '') for l,label in [('zh-CN','中'),('en','EN')])
     theme_color = '#f1f9fc' if not kind else '#f4fbff'
