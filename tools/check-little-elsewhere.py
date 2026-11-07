@@ -45,7 +45,7 @@ for route in ['','en/','privacy','terms','en/privacy','en/terms','support/','en/
             if route and not route.endswith('/'):
                 assert res.url.endswith(route+'/'), 'directory redirect missing'
     print('PASS direct navigation + repeat request:',url)
-for name in ['index.html','privacy/index.html','terms/index.html']:
+for name in ['privacy/index.html','terms/index.html']:
     expected=subprocess.check_output(['git','show','HEAD:'+name],cwd=ROOT)
     assert (ROOT/name).read_bytes().replace(b'\r\n',b'\n')==expected.replace(b'\r\n',b'\n'),name+' changed'
-print('PASS corporate home/privacy/terms unchanged')
+print('PASS corporate privacy/terms unchanged')

@@ -53,6 +53,10 @@ body, body.field-active { background: #F7F8FA; }
 .footer-top p, .footer-bottom, .product-story .translation { color: var(--muted); }
 .contact-address { color: var(--blue); }
 .contact-address a { border-color: var(--blue); }
+.contact:target .contact-address a {
+  outline: 2px solid var(--blue);
+  outline-offset: 5px;
+}
 .footer-brand span, .footer a:hover { color: var(--blue); }
 .contact a:focus-visible, .footer a:focus-visible { outline-color: var(--blue); }
 .work-section, .footer, .footer-bottom, .product-story, .domains,

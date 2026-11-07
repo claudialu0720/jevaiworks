@@ -60,19 +60,22 @@ def shell(lang,body,kind='',description=None):
         nav_links = f'<a class="explore" href="{route(lang)}#explore">{c["explore"]}</a>'
         nav_cta = button(c)
         footer_contact = '#contact' if kind == 'support' else 'mailto:hello@jevaiworks.com'
-        website_privacy = '网站隐私' if lang == 'zh-CN' else 'Website privacy'
+        support_label = c['support']
+        website_privacy_label = '网站隐私' if lang == 'zh-CN' else 'Website privacy'
+        website_privacy_link = f'<a href="/privacy/">{website_privacy_label}</a>'
     else:
         privacy_label = '隐私政策' if lang == 'zh-CN' else 'Privacy'
         nav_links = f'<a href="{route(lang,"privacy")}/">{privacy_label}</a><a href="#contact">{c["contact"]}</a>'
         nav_cta = ''
         footer_contact = '#contact'
-        website_privacy = '网站隐私政策' if lang == 'zh-CN' else 'Jevai Works Privacy'
+        support_label = '支持' if lang == 'zh-CN' else 'Support'
+        website_privacy_link = ''
     copyright_name = 'Jevai Works' if lang == 'en' and not kind else '界外造物创意科技（青岛）有限公司'
     return f'''<!doctype html>
 <html lang="{lang}"><head><meta charset="utf-8">{GOOGLE_TAG}<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="{theme_color}"><title>{escape(title)}</title><meta name="description" content="{escape(description)}"><link rel="canonical" href="{ORIGIN+url}"><link rel="alternate" hreflang="zh-CN" href="{ORIGIN+route('zh-CN',kind)}"><link rel="alternate" hreflang="en" href="{ORIGIN+route('en',kind)}"><link rel="alternate" hreflang="x-default" href="{ORIGIN+route('zh-CN',kind)}"><meta property="og:title" content="{escape(title)}"><meta property="og:description" content="{escape(description)}"><meta property="og:type" content="website"><meta property="og:url" content="{ORIGIN+url}"><meta property="og:locale" content="{'zh_CN' if lang=='zh-CN' else 'en_US'}"><meta property="og:image" content="{ORIGIN+ASSET}lake.webp"><meta property="og:image:alt" content="{'别境湖畔风景' if lang=='zh-CN' else 'A peaceful lake in Little Elsewhere'}"><link rel="icon" href="{ASSET}icon.webp"><link rel="stylesheet" href="{BASE}product.css"><script defer src="{BASE}product.js"></script>{landing_css}</head><body{body_class}>
 <a class="skip" href="#main">{c['skip']}</a><header class="header wrap"><a class="brand" href="{route(lang)}"><img src="{ASSET}icon.webp" width="42" height="42" alt=""><span>{c['name']}</span></a><nav aria-label="{'主导航' if lang=='zh-CN' else 'Main navigation'}">{nav_links}<div class="languages" role="group" aria-label="{'语言' if lang=='zh-CN' else 'Language'}">{langs}</div>{nav_cta}</nav></header>
 {body}
-<footer class="footer wrap"><div class="footer-top"><a href="{route(lang)}">Little Elsewhere</a><nav aria-label="{'页脚导航' if lang=='zh-CN' else 'Footer navigation'}"><a href="{route(lang,'privacy')}">{c['privacy']}</a><a href="{route(lang,'terms')}">{c['terms']}</a><a href="{route(lang,'support')}"{' aria-current="page"' if kind=='support' else ''}>{c['support']}</a><a href="/privacy/">{website_privacy}</a><a href="{footer_contact}">{c['contact']}</a></nav></div><div class="footer-bottom"><a class="footer-credit" href="/">{c['credit']}</a><p>© 2026 {copyright_name}</p></div></footer></body></html>'''
+<footer class="footer wrap"><div class="footer-top"><a href="{route(lang)}">Little Elsewhere</a><nav aria-label="{'页脚导航' if lang=='zh-CN' else 'Footer navigation'}"><a href="{route(lang,'privacy')}">{c['privacy']}</a><a href="{route(lang,'terms')}">{c['terms']}</a><a href="{route(lang,'support')}"{' aria-current="page"' if kind=='support' else ''}>{support_label}</a>{website_privacy_link}<a href="{footer_contact}">{c['contact']}</a></nav></div><div class="footer-bottom"><a class="footer-credit" href="/">{c['credit']}</a><p>© 2026 {copyright_name}</p></div></footer></body></html>'''
 
 def landing(lang):
     body = '\n'.join(line.rstrip() for line in landing_content(lang, COPY[lang], image, button).splitlines())
