@@ -25,6 +25,7 @@ TEXT = {
  },
  'en': {
   'title': 'A little focus. A little fishing.',
+  'headline': 'A little focus.<br> A little fishing.<br> A little elsewhere.',
   'description': 'A cozy Pomodoro timer with soothing sounds<br>and little discoveries.',
   'support': 'Set a timer, settle by the water, and focus on what matters.',
   'how': 'A little surprise after every session.',
@@ -72,7 +73,7 @@ def landing_content(lang, common, image, button):
     journal = journal.replace('<!-- journal-duo-preview -->', journal_duo)
     def phone(slug, alt):
         return f'<div class="device">{image(slug, alt, cls="device-screen")}</div>'
-    headline = t['title'].replace('变成', '变成<br>') if lang == 'zh-CN' else t['title'].replace('focus. ', 'focus.<br> ')
+    headline = t['title'].replace('变成', '变成<br>') if lang == 'zh-CN' else t['headline']
     slugs = ['pre-'+suffix, 'focus-session-rainbow', 'fish-'+suffix]
     focus_duo_attrs = ('data-duo-src="/assets/little-elsewhere/redesign/duo-focus.webp" '
                        'data-duo-width="1323" data-duo-height="908" '
