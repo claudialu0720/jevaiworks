@@ -39,11 +39,13 @@ Little Elsewhere does not currently require an account. Your detailed focus hist
 
 If you delete the app, use Delete my data, lose your device, or change phones, information that exists only locally may be lost.
 
-Operating-system backups, such as iCloud device backups or computer backups, may allow restoration, depending on your device settings and operating system. Little Elsewhere does not currently provide its own in-app iCloud backup or cross-device progress sync.
+Operating-system backups, such as iCloud device backups or computer backups, may allow restoration, depending on your device settings and operating system.
+
+On iOS, in-app iCloud backup is on by default for Plus members. When iCloud is available, the latest backup is saved to your own iCloud account. You can turn off backup in Settings › Data & privacy. You can restore an existing backup after Plus expires. Restoring replaces the current progress on the device. Delete my data clears local data. Manage the iCloud copy separately.
 
 The Export a backup feature provides a readable copy of your data. However, the current publicly released app does not support importing that exported file back into the app to restore progress.
 
-We cannot guarantee recovery of local data that has not been backed up or cannot be restored from an available device backup. This does not limit rights or responsibilities that cannot legally be excluded.
+We cannot guarantee recovery of local data that has not been backed up or cannot be restored from an available backup. This does not limit rights or responsibilities that cannot legally be excluded.
 
 ## 4. Little Elsewhere Plus
 
