@@ -259,6 +259,7 @@
 .worlds-scene .worlds-background {pointer-events:none}
 .worlds-music-panel,.worlds-map-panel {pointer-events:none}
 .worlds-music-copy>div,.worlds-map-copy>div {font-size:46px!important}
+.worlds-music-copy:lang(zh-CN) p {text-align:left}
 .worlds-scene .page-reveal {--reveal-distance:65px}
 @media(max-width:700px) {
  .worlds-scene {aspect-ratio:auto}
