@@ -85,7 +85,7 @@ def landing(lang):
 def inline(s):
     s=escape(s)
     s=re.sub(r'\*\*(.+?)\*\*',r'<strong>\1</strong>',s)
-    s=re.sub(r'\[([^\]]+)\]\((https?://[^\s<|)]+)\)|(https?://[^\s<|]+)',lambda m:f'<a href="{m[2] or m[3]}">{m[1] or m[3]}</a>',s)
+    s=re.sub(r'\[([^\]]+)\]\(((?:https?://|mailto:)[^\s<|)]+)\)|(https?://[^\s<|]+)',lambda m:f'<a href="{m[2] or m[3]}">{m[1] or m[3]}</a>',s)
     return s
 
 def markdown(source, lang='zh-CN'):
@@ -117,11 +117,11 @@ def markdown(source, lang='zh-CN'):
 
 LEGAL_SOURCES = {
     'zh-CN': {
-        'privacy': 'Little_Elsewhere_隐私政策_V3.2_2026-11-05.md',
+        'privacy': 'privacy.zh-CN.2026-11-09.md',
         'terms': 'terms.zh-CN.2026-11-09.md',
     },
     'en': {
-        'privacy': 'Little_Elsewhere_Privacy_Policy_EN_V3.2_2026-11-05.md',
+        'privacy': 'privacy.en.2026-11-09.md',
         'terms': 'terms.en.2026-11-09.md',
     },
 }
@@ -144,15 +144,14 @@ def generate():
                 else:
                     notice = f'<a href="{route("zh-CN", kind)}/" lang="zh-CN" hreflang="zh-CN">阅读中文版</a>'
                     description = 'Terms of Use for Little Elsewhere.'
-            elif lang=='zh-CN':
-                notice='V3.2 · 代码核查后的待发布草稿。生效日期及原文中的待确认事项尚未填写或核实，以下按所提供文档完整展示。'
-                description='别境 '+c[kind]+' V3.2（待发布草稿）。'
+                notice = f'<aside class="notice">{notice}</aside>'
             else:
-                notice=('V3.2 · Draft aligned to source-code review. The effective date and pending confirmations '
-                        'remain as provided in the source document. '
-                        f'<a href="{route("zh-CN",kind)}/" lang="zh-CN">阅读中文原文</a>')
-                description=c[kind]+' for Little Elsewhere. V3.2 draft aligned to source-code review.'
-            content=f'<aside class="notice">{notice}</aside><article data-legal-source="{filename}">{markdown(source, lang)}</article>'
+                other_lang = 'en' if lang == 'zh-CN' else 'zh-CN'
+                alternate_url = ORIGIN + route(other_lang, kind) + '/'
+                source = re.sub(rf'^\[[^\]\n]+\]\({re.escape(alternate_url)}\)\n\n', '', source, flags=re.M)
+                notice = ''
+                description = '别境隐私政策。' if lang == 'zh-CN' else 'Privacy Policy for Little Elsewhere.'
+            content=f'{notice}<article data-legal-source="{filename}">{markdown(source, lang)}</article>'
             body=f'<main id="main" class="legal wrap "><a class="back" href="{route(lang)}">{c["back"]}</a>{content}</main>'
             p=ROOT/route(lang,kind).strip('/'); p.mkdir(parents=True,exist_ok=True)
             (p/'index.html').write_text(shell(lang,body,kind,description),encoding='utf-8')
