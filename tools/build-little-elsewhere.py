@@ -50,6 +50,8 @@ def route(lang,kind=''): return BASE+('en/' if lang=='en' else '')+kind+('/' if 
 
 def shell(lang,body,kind='',description=None):
     c=COPY[lang] | {'support': SUPPORT[lang]['title']}
+    if kind == 'terms' and lang == 'en':
+        c['terms'] = 'Terms of Use'
     title=('Little Elsewhere — '+TEXT[lang]['title']) if not kind else c[kind]+' — Little Elsewhere'
     description=description or c['desc']; url=route(lang,kind)
     langs=''.join(f'<a href="{route(l,kind)}" lang="{l}" hreflang="{l}"'+(' aria-current="page"' if l==lang else '')+f'>{label}</a>'+('<span aria-hidden="true">/</span>' if l=='zh-CN' else '') for l,label in [('zh-CN','中'),('en','EN')])
@@ -116,11 +118,11 @@ def markdown(source, lang='zh-CN'):
 LEGAL_SOURCES = {
     'zh-CN': {
         'privacy': 'Little_Elsewhere_隐私政策_V3.2_2026-11-05.md',
-        'terms': 'Little_Elsewhere_用户服务协议_V3.2_2026-11-05.md',
+        'terms': 'terms.zh-CN.2026-11-09.md',
     },
     'en': {
         'privacy': 'Little_Elsewhere_Privacy_Policy_EN_V3.2_2026-11-05.md',
-        'terms': 'Little_Elsewhere_Terms_of_Use_EN_V3.2_2026-11-05.md',
+        'terms': 'terms.en.2026-11-09.md',
     },
 }
 
@@ -135,7 +137,14 @@ def generate():
         for kind,filename in LEGAL_SOURCES[lang].items():
             c=COPY[lang]
             source=(ROOT/'little-elsewhere/legal-source'/filename).read_text(encoding='utf-8-sig')
-            if lang=='zh-CN':
+            if kind == 'terms':
+                if lang == 'zh-CN':
+                    notice = f'<a href="{route("en", kind)}/" lang="en" hreflang="en">Read in English</a>'
+                    description = '别境用户服务协议。'
+                else:
+                    notice = f'<a href="{route("zh-CN", kind)}/" lang="zh-CN" hreflang="zh-CN">阅读中文版</a>'
+                    description = 'Terms of Use for Little Elsewhere.'
+            elif lang=='zh-CN':
                 notice='V3.2 · 代码核查后的待发布草稿。生效日期及原文中的待确认事项尚未填写或核实，以下按所提供文档完整展示。'
                 description='别境 '+c[kind]+' V3.2（待发布草稿）。'
             else:
