@@ -55,7 +55,7 @@ def focus_switch(duo_label, solo_label, image_attrs=''):
             f'aria-pressed="false">{duo_label}</button>')
 
 
-def landing_content(lang, common, image, button):
+def landing_content(lang, image, badge):
     t = TEXT[lang]
     suffix = 'cn' if lang == 'zh-CN' else 'en'
     contact_title, contact_copy, rednote_label = (
@@ -89,7 +89,7 @@ def landing_content(lang, common, image, button):
         <h1 id="arrival-title">{headline}</h1>
         <p class="description">{t['description']}</p>
         <p class="support">{t['support']}</p>
-        {button(common)}
+        {badge}
         <nav class="social-links" aria-label="Social media"><a href="https://www.instagram.com/little_elsewhere_app/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><span class="social-icon instagram-icon"><img src="/assets/little-elsewhere/instagram-logo.png" alt="" width="568" height="530"></span></a><a href="https://www.xiaohongshu.com/user/profile/6518184900000000230270c7" target="_blank" rel="noopener noreferrer" aria-label="{rednote_label}"><span class="social-icon rednote-icon"><img src="/assets/little-elsewhere/rednote-logo.png" alt="" width="592" height="538"></span></a></nav>
       </div>
     </div>
@@ -122,7 +122,7 @@ def landing_content(lang, common, image, button):
     <div class="content">
       <h2 id="invitation-title">{t['closing']}</h2>
       {('<p>'+t['closingText']+'</p>') if t['closingText'] else ''}
-      {button(common)}
+      {badge}
     </div>
   </section>
   <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="content"><h2 id="contact-title">{contact_title}</h2><p>{contact_copy}</p><a class="contact-email" href="mailto:hello@jevaiworks.com">hello@jevaiworks.com</a></div></section>

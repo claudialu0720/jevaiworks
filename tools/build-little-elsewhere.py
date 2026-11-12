@@ -18,7 +18,8 @@ ASSET_SIZES.update({'lake-wide': (2083, 755), 'underwater-wide': (2083, 755), 'w
 ASSET_SIZES.update({'collection-cn': (1500, 1106), 'collection-en': (1500, 1088), 'map': (400, 867), 'hero-focus': (1400, 646), 'hero-banner-frame': (1516, 736), 'focus-session-rainbow': (1517, 736)})
 ASSET_SIZES.update({'home-cn': (403, 831), 'home-en': (404, 831)})
 ASSET_SIZES.update({'pre-cn': (403, 831), 'pre-en': (403, 831), 'fish-cn': (800, 1651), 'fish-en': (800, 1650)})
-BETA = 'https://testflight.apple.com/join/Uk9rZz5B'
+APP_STORE_URL = 'https://apps.apple.com/us/app/little-elsewhere-focus-timer/id6817194286#information'
+APP_STORE_BADGE = '/assets/little-elsewhere/app-store-badge.svg'
 # Keep generated pages connected to the Little Elsewhere web stream.
 GOOGLE_TAG = '''
 <!-- Google tag (gtag.js) -->
@@ -34,8 +35,8 @@ GOOGLE_TAG = '''
 </script>
 '''
 COPY = {
-'zh-CN': dict(name='别境', explore='探索别境', cta='加入 iOS 内测', title='专注一会儿，<br>去湖边钓条鱼。', desc='一款把专注变成钓鱼时光的温柔计时器。', support='设定时间，让风景与声音陪你专注。<br>完成之后，钓起一份属于自己的小惊喜。', status='iOS 内测 · 通过 TestFlight', caption='把喧嚣留在岸上。', caption2='湖水、小舟，和属于你的时间。', how='一段专注，<br>三点小小的快乐。', howdesc='不用急着做更多。<br>从给眼前的事留一点时间开始。', steps=[('设定专注时间','选好时长，写下此刻想做的事。'),('沉浸湖畔时光','让小舟停在水面，让思绪回到眼前。'),('钓起意外惊喜','完成专注，看看这次遇见了谁。')], world='一点风景，<br>一点声音，<br>一点发现。', worlddesc='在瀑布边听水声，在月光下坐一会儿。换一处风景，也给日常换一种心情。', rainbow='雨过天晴，等一道彩虹。', moon='夜深了，还有月亮作伴。', more='不止是计时，<br>也是自己的小天地。', moredesc='让每次专注，都多一点值得期待的事。', features=[('听见喜欢的安静','背景音乐与自然环境音，陪你慢慢进入状态。'),('留下小小的收获','收集遇见的鱼和物品，记住一段湖畔时光。')], final='给自己一小段别处的时间。', faq='如何加入内测？', instructions='在 iPhone 上安装 Apple 的 <a href="https://apps.apple.com/app/testflight/id899247664">TestFlight</a>，再打开本页的内测邀请，在 TestFlight 中接受邀请并安装别境。', help='若暂时无法加入，请查看邀请页的名额和设备要求。可通过 TestFlight 发送 Beta 版反馈，或联系 <a href="mailto:hello@jevaiworks.com">hello@jevaiworks.com</a>。', privacy='隐私政策', terms='用户服务协议', contact='联系', credit='界外造物出品', back='← 返回别境', skip='跳至主要内容'),
-'en': dict(name='Little Elsewhere', explore='Explore', cta='Join the iOS Beta', title='A little focus.<br>A little fishing.', desc='A cozy focus timer that turns quiet moments into little discoveries.', support='Set a timer, settle by the water,<br>and see what you catch along the way.', status='iOS beta · via TestFlight', caption='Leave the noise on the shore.', caption2='A lake, a little boat, a moment for yourself.', how='A little time.<br>Three little joys.', howdesc='Make a little room for the thing in front of you. The lake will keep you company.', steps=[('Set a focus timer','Choose a little time for what matters to you.'),('Focus by the water','Let the scenery and sounds help you settle in.'),('Catch little surprises','Finish your session. See who comes along.')], world='A little scenery.<br>A little sound.<br>A little discovery.', worlddesc='Listen to a waterfall. Sit beneath the moon. A change of scenery for an ordinary day.', rainbow='A little rainbow after the rain.', moon='A quiet evening, with the moon for company.', more='More than a timer.<br>A little world of your own.', moredesc='Something to look forward to, each time you focus.', features=[('Find your quiet','Gentle music and natural ambience help you ease into the moment.'),('Keep a little discovery','Collect fish and little finds to remember your time by the water.')], final='Find your little elsewhere.', faq='How do I join the beta?', instructions='On your iPhone, install Apple’s <a href="https://apps.apple.com/app/testflight/id899247664">TestFlight</a>, then open the beta invitation on this page. Accept the invitation and install Little Elsewhere in TestFlight.', help='If you can’t join, check availability and device requirements on the invitation page. Send Beta Feedback through TestFlight or email <a href="mailto:hello@jevaiworks.com">hello@jevaiworks.com</a>.', privacy='Privacy Policy', terms='Terms of Service', contact='Contact', credit='A Jevai Works creation', back='← Back to Little Elsewhere', skip='Skip to content')}
+'zh-CN': dict(name='别境', explore='探索别境', title='专注一会儿，<br>去湖边钓条鱼。', desc='一款把专注变成钓鱼时光的温柔计时器。', support='设定时间，让风景与声音陪你专注。<br>完成之后，钓起一份属于自己的小惊喜。', status='iOS 内测 · 通过 TestFlight', caption='把喧嚣留在岸上。', caption2='湖水、小舟，和属于你的时间。', how='一段专注，<br>三点小小的快乐。', howdesc='不用急着做更多。<br>从给眼前的事留一点时间开始。', steps=[('设定专注时间','选好时长，写下此刻想做的事。'),('沉浸湖畔时光','让小舟停在水面，让思绪回到眼前。'),('钓起意外惊喜','完成专注，看看这次遇见了谁。')], world='一点风景，<br>一点声音，<br>一点发现。', worlddesc='在瀑布边听水声，在月光下坐一会儿。换一处风景，也给日常换一种心情。', rainbow='雨过天晴，等一道彩虹。', moon='夜深了，还有月亮作伴。', more='不止是计时，<br>也是自己的小天地。', moredesc='让每次专注，都多一点值得期待的事。', features=[('听见喜欢的安静','背景音乐与自然环境音，陪你慢慢进入状态。'),('留下小小的收获','收集遇见的鱼和物品，记住一段湖畔时光。')], final='给自己一小段别处的时间。', faq='如何加入内测？', instructions='在 iPhone 上安装 Apple 的 <a href="https://apps.apple.com/app/testflight/id899247664">TestFlight</a>，再打开本页的内测邀请，在 TestFlight 中接受邀请并安装别境。', help='若暂时无法加入，请查看邀请页的名额和设备要求。可通过 TestFlight 发送 Beta 版反馈，或联系 <a href="mailto:hello@jevaiworks.com">hello@jevaiworks.com</a>。', privacy='隐私政策', terms='用户服务协议', contact='联系', credit='界外造物出品', back='← 返回别境', skip='跳至主要内容'),
+'en': dict(name='Little Elsewhere', explore='Explore', title='A little focus.<br>A little fishing.', desc='A cozy focus timer that turns quiet moments into little discoveries.', support='Set a timer, settle by the water,<br>and see what you catch along the way.', status='iOS beta · via TestFlight', caption='Leave the noise on the shore.', caption2='A lake, a little boat, a moment for yourself.', how='A little time.<br>Three little joys.', howdesc='Make a little room for the thing in front of you. The lake will keep you company.', steps=[('Set a focus timer','Choose a little time for what matters to you.'),('Focus by the water','Let the scenery and sounds help you settle in.'),('Catch little surprises','Finish your session. See who comes along.')], world='A little scenery.<br>A little sound.<br>A little discovery.', worlddesc='Listen to a waterfall. Sit beneath the moon. A change of scenery for an ordinary day.', rainbow='A little rainbow after the rain.', moon='A quiet evening, with the moon for company.', more='More than a timer.<br>A little world of your own.', moredesc='Something to look forward to, each time you focus.', features=[('Find your quiet','Gentle music and natural ambience help you ease into the moment.'),('Keep a little discovery','Collect fish and little finds to remember your time by the water.')], final='Find your little elsewhere.', faq='How do I join the beta?', instructions='On your iPhone, install Apple’s <a href="https://apps.apple.com/app/testflight/id899247664">TestFlight</a>, then open the beta invitation on this page. Accept the invitation and install Little Elsewhere in TestFlight.', help='If you can’t join, check availability and device requirements on the invitation page. Send Beta Feedback through TestFlight or email <a href="mailto:hello@jevaiworks.com">hello@jevaiworks.com</a>.', privacy='Privacy Policy', terms='Terms of Service', contact='Contact', credit='A Jevai Works creation', back='← Back to Little Elsewhere', skip='Skip to content')}
 
 def image(slug,alt,lazy=True,cls=''):
     p=ROOT/ASSET.lstrip('/')/(slug+'.webp')
@@ -45,7 +46,12 @@ def image(slug,alt,lazy=True,cls=''):
     responsive=f' srcset="{ASSET}{slug}{small}.webp {small_width}w, {ASSET}{slug}.webp {w}w" sizes="100vw"' if (p.parent/(slug+small+'.webp')).exists() else ''
     return f'<img class="{cls}" src="{ASSET}{slug}.webp"{responsive} width="{w}" height="{h}" alt="{escape(alt)}" '+('loading="lazy" decoding="async"' if lazy else 'fetchpriority="high"')+'>'
 
-def button(c): return f'<a class="button" href="{BETA}">{c["cta"]}<span aria-hidden="true">↗</span></a>'
+def app_store_badge(lang):
+    alt = '在 App Store 下载别境' if lang == 'zh-CN' else 'Download Little Elsewhere on the App Store'
+    return (f'<a class="app-store-badge" href="{APP_STORE_URL}">'
+            f'<img src="{APP_STORE_BADGE}" width="126" height="42" alt="{alt}"></a>')
+
+
 def route(lang,kind=''): return BASE+('en/' if lang=='en' else '')+kind+('/' if kind=='support' else '')
 
 def shell(lang,body,kind='',description=None):
@@ -56,11 +62,11 @@ def shell(lang,body,kind='',description=None):
     description=description or c['desc']; url=route(lang,kind)
     langs=''.join(f'<a href="{route(l,kind)}" lang="{l}" hreflang="{l}"'+(' aria-current="page"' if l==lang else '')+f'>{label}</a>'+('<span aria-hidden="true">/</span>' if l=='zh-CN' else '') for l,label in [('zh-CN','中'),('en','EN')])
     theme_color = '#f1f9fc' if not kind else '#f4fbff'
-    landing_css = f'<link rel="stylesheet" href="{BASE}landing-v4.css?v=2">' if not kind else ''
+    landing_css = f'<link rel="stylesheet" href="{BASE}landing-v4.css?v=3">' if not kind else ''
     body_class = ' class="landing-page"' if not kind else ' class="legal-page"'
     if kind:
         nav_links = f'<a class="explore" href="{route(lang)}#explore">{c["explore"]}</a>'
-        nav_cta = button(c)
+        nav_cta = app_store_badge(lang)
         footer_contact = '#contact' if kind == 'support' else f'{route(lang, "support")}#contact'
         support_label = c['support']
     else:
@@ -77,7 +83,7 @@ def shell(lang,body,kind='',description=None):
 <footer class="footer wrap"><div class="footer-top"><a href="{route(lang)}">Little Elsewhere</a><nav aria-label="{'页脚导航' if lang=='zh-CN' else 'Footer navigation'}"><a href="{route(lang,'privacy')}">{c['privacy']}</a><a href="{route(lang,'terms')}">{c['terms']}</a><a href="{route(lang,'support')}"{' aria-current="page"' if kind=='support' else ''}>{support_label}</a><a href="{footer_contact}">{c['contact']}</a></nav></div><div class="footer-bottom"><a class="footer-credit" href="/">{c['credit']}</a><p>© 2026 {copyright_name}</p></div></footer></body></html>'''
 
 def landing(lang):
-    body = '\n'.join(line.rstrip() for line in landing_content(lang, COPY[lang], image, button).splitlines())
+    body = '\n'.join(line.rstrip() for line in landing_content(lang, image, app_store_badge(lang)).splitlines())
     description = re.sub('<[^>]+>', ' ', TEXT[lang]['description'])
     return shell(lang, body, description=description)
 

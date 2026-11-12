@@ -24,9 +24,7 @@
 .landing-page .brand {font-size:17px;font-weight:var(--heading-weight);letter-spacing:.025em}
 .landing-page .brand img {width:36px;height:36px;border-radius:10px}
 .landing-page .header nav {gap:28px}
-.landing-page .button {background:#ddf3fa;color:#264e5a;border:1px solid #a9d7e5;border-radius:7px;min-height:48px;padding:12px 24px;gap:22px;font-size:14px;font-weight:var(--heading-weight);box-shadow:none}
-.landing-page .button:hover {background:#c8eaf5;transform:translateY(-1px)}
-.landing-page .header .button {min-height:40px;padding:9px 18px;font-size:13px;background:#f1f9fc}
+.landing-page .app-store-badge img {width:auto;height:50px}
 .landing-page a:focus-visible {outline-color:#287589}
 .landing-page .panorama {width:100%;height:auto;object-fit:contain}
 .landing-page .landscape-screen {width:100%;height:auto;border-radius:12px;box-shadow:0 12px 35px #24536317}
@@ -37,7 +35,7 @@
 .landing-page .arrival-copy {max-width:520px}
 .landing-page .description {margin-top:22px;max-width:470px;font-size:17px}
 .landing-page .support {margin-top:12px;font-size:14px}
-.landing-page .arrival-copy .button {margin-top:27px;background:#fff}
+.landing-page .arrival-copy .app-store-badge {margin-top:27px}
 .landing-page .social-links {display:flex;align-items:center;gap:20px;margin-top:43px}
 .landing-page .social-links a {position:relative;display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;border-radius:11px;transition:transform .2s,background .2s}
 .landing-page .social-links a:hover {transform:translateY(-3px);background:#ffffffaa}
@@ -83,7 +81,7 @@
 .landing-page .invitation {text-align:center;padding:64px 0 52px;background:linear-gradient(#fff,#f2faff)}
 .landing-page .invitation h2 {max-width:800px;margin:auto;font-size:clamp(25px,2.2vw,32px)}
 .landing-page .invitation p {margin-top:15px;font-size:14px}
-.landing-page .invitation .button {margin-top:26px}
+.landing-page .invitation .app-store-badge {margin-top:26px}
 .landing-page .contact-section {padding:52px 0;text-align:center;background:#f2faff}
 .landing-page .contact-section h2 {font-size:clamp(25px,2.2vw,32px)}
 .landing-page .contact-section p {margin:10px 0;font-size:14px}
@@ -133,7 +131,7 @@
  .landing-page h2 {font-size:27px}
  .landing-page .description {font-size:16px;margin-top:18px}
  .landing-page .support {font-size:14px;max-width:310px}
- .landing-page .arrival-copy .button {margin-top:23px}
+ .landing-page .arrival-copy .app-store-badge {margin-top:23px}
  .landing-page .hero-interface {position:relative;top:auto;right:auto;margin:36px auto 100px;width:64%;max-width:240px}
  .landing-page .hero-interface img {height:auto;max-height:none}
  .landing-page .arrival-scenery {width:180%;left:-40%}
